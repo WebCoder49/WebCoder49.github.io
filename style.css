@@ -136,6 +136,12 @@ nav {
 .nav-button {
     height: 100px;
     width: 100px;
+    font-size: 80%;
     background-color: var(--nav-bg-color);
     float: left;
+    transition: all 0.5s;
+    color: var(--main-text-color);
+}
+.nav-button:hover {
+    color: var(--emphasis-text-color);
 }
