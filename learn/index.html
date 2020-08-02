@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            WebCoder49 - Learn
+        </title>
+        <link href="https://fonts.googleapis.com/css2?family=Recursive&family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <link href="../style.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--favicon-->
+        <link rel="icon" href="../images/logo-square.png" type="image/png">
+    </head>
+    <body>
+        <nav><div class="nav-button" id="nav-button" onclick="document.getElementById('sliding-nav').className = 'open'; document.getElementById('nav-button').className = 'hidden';">&#9776;</div><div class="logo-contain"><img class="logo" src="../images/logo.png"/><div class="logo-text">WebCoder49</div></div></nav>
+        <div id="sliding-nav"><div class="nav-button" onclick="document.getElementById('sliding-nav').className = ''; document.getElementById('nav-button').className = '';">&times;</div><h1> Contents</h1><br/>
+        <ul>
+            <a href="../"><li class="">HOME</li></a>
+            <a href="#"><li class="current">LEARN with Video Tutorials</li></a>
+            <a href="../projects"><li class="">SEE and PLAY my projects</li></a>
+        </ul>
+        </div>
+        <main>
+        <div class="banner" style="background-image: url('../images/banner-learn.png');">
+        <div class="banner-text">
+        <h1>Learn</h1>
+        <h2>with Video Tutorials</h2>
+        </div></div>
+        <h1>Video Tutorials</h1>
+        <p>Please <b>subscribe and like the videos (<a href="https://www.youtube.com/channel/UCRGa9FlO3g-InDThc9Qk6Lw" target="_blank">See my Channel</a>)</b>! Click the title of a video to view it.</p>
+        <h2>The Videos: </h2>
+        <div class="dropdown" onclick="this.classList.toggle('open');">
+            <h1>Coding Your First Webpage Using HTML</h1>
+        </div>
+    </main>
+    </body>
+</html>

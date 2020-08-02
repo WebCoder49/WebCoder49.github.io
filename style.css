@@ -188,6 +188,9 @@ nav {
     text-align: center;
     transition: 0.5s;
 }
+#sliding-nav ul li.current {
+    color: var(--emphasis-nav-text-color);
+}
 #sliding-nav ul li:before {
     content: "";
 }
