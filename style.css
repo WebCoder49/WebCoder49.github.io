@@ -9,7 +9,7 @@
     --header-color: yellow;
     --header-color-b: lightblue;
     --nav-bg-color: navy;
-    --nav-bg-color-translucent: rgba(0, 0, 128, 0.5);
+    --nav-bg-color-translucent: rgba(0, 0, 128, 0.7);
 }
 body {
     margin: 0;
@@ -133,15 +133,47 @@ nav {
     margin: 0;
     padding: 0;
 }
-.nav-button {
+.nav-button, #nav-button {
     height: 100px;
     width: 100px;
-    font-size: 80%;
+    font-size: 80px;
+    text-align: center;
     background-color: var(--nav-bg-color);
     float: left;
     transition: all 0.5s;
     color: var(--main-text-color);
 }
-.nav-button:hover {
+.nav-button:hover, #nav-button:hover {
     color: var(--emphasis-text-color);
+}
+#nav-button.hidden {
+    opacity: 0;
+}
+#sliding-nav {
+    height: 90vh;
+    position: fixed;
+    z-index: 10;
+    width: 0;
+    transition: all 1s;
+    background-color: var(--nav-bg-color);
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+#sliding-nav.open {
+    width: 100vw;
+}
+#sliding-nav ul li {
+    width: 100%;
+    border-top: 1px solid var(--main-text-color);
+    border-bottom: 1px solid var(--main-text-color);
+    font-size: 5vw;
+    text-align: center;
+    transition: 0.5s;
+}
+#sliding-nav ul li:before {
+    content: "";
+}
+#sliding-nav ul li:hover {
+    color: var(--emphasis-text-color);
+    border-color: var(--emphasis-text-color);
 }
