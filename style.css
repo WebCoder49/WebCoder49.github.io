@@ -128,6 +128,7 @@ nav {
     width: 100%;
     background-color: var(--nav-bg-color-tanslucent);
     background-image: linear-gradient(var(--nav-bg-color), var(--nav-bg-color-translucent));
+    z-index: 1000;
 }
 .logo {
     height: 80%;
@@ -231,4 +232,9 @@ nav {
 }
 .dropdown h1:hover {
     color: var(--emphasis-nav-text-color);
+}
+iframe {
+    border: 1px solid var(--nav-bg-color);
+    position: relative;
+    margin: 5px;
 }
