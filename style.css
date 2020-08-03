@@ -30,6 +30,14 @@ body {
     background-color: var(--body-fg-color);
     border-radius: 5px;
 }
+::selection {
+    background: var(--nav-bg-color);
+    color: var(--main-nav-text-color);
+}
+::-moz-selection {
+    background: var(--nav-bg-color);
+    color: var(--main-nav-text-color);
+}
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--display-font);
     padding: 10px;
@@ -202,7 +210,11 @@ nav {
 .dropdown {
     height: 50px;
     overflow: hidden;
-    border-bottom: 1px solid var(--nav-bg-color);
+    transition: all  0.5s;
+    border: 1px solid transparent;
+    overflow: hidden;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 .dropdown h1:after {
     content: "+";
@@ -212,6 +224,10 @@ nav {
 }
 .dropdown.open {
     height: auto;
+    border: 5vw solid var(--emphasis-text-color);
+    border-bottom: 5vw solid var(--nav-bg-color);
+    border-top: 5vw solid var(--nav-bg-color);
+    overflow: auto;
 }
 .dropdown.open h1:after {
     content: "-";
@@ -224,17 +240,47 @@ nav {
     height: 20px;
     margin: 5px;
     padding: 10px;
-    width: 100%;
     border: 1px solid var(--main-nav-text-color);
     color: var(--main-nav-text-color);
     background-color: var(--nav-bg-color);
     transition: 0.5s;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  overflow: hidden;
+}
+.dropdown h4 {
+    font-size: 18px;
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid var(--main-nav-text-color);
+    color: var(--main-nav-text-color);
+    background-color: var(--emphasis-text-color);
+    text-align: center;
+    text-decoration: none;
 }
 .dropdown h1:hover {
     color: var(--emphasis-nav-text-color);
 }
 iframe {
     border: 1px solid var(--nav-bg-color);
-    position: relative;
     margin: 5px;
+}
+.centered {
+    text-align: center;
+}
+.buttons {
+    text-align: center;
+}
+button {
+    margin: 10px;
+    padding: 5px;
+    font-size: 20px;
+    font-family: var(--display-font);
+    color: var(--main-bg-color);
+    background-color: var(--nav-bg-color);
+    border: 0;
+    transition: all 0.5s;
+}
+button:hover {
+    background-color: var(--emphasis-text-color);
 }
