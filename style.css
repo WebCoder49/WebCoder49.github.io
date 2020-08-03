@@ -181,13 +181,14 @@ nav {
     width: 0;
     transition: all 1s;
     background-color: var(--nav-bg-color);
-    overflow-y: auto;
+    overflow-y: hidden;
     overflow-x: hidden;
     margin-bottom: 110px;
     margin: 10px;
 }
 #sliding-nav.open {
     width: 100vw;
+    overflow-y: auto;
 }
 #sliding-nav ul li {
     border-top: 1px solid var(--main-nav-text-color);
