@@ -6,46 +6,36 @@
         </title>
         <link href="https://fonts.googleapis.com/css2?family=Recursive&family=Source+Code+Pro&display=swap" rel="stylesheet">
         <link href="style.css" rel="stylesheet">
+        <script src="script.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!--favicon-->
         <link rel="icon" href="images/logo-square.png" type="image/png">
     </head>
-    <body>
-        <nav><div class="nav-button" id="nav-button" onclick="document.getElementById('sliding-nav').className = 'open'; document.getElementById('nav-button').className = 'hidden';">&#9776;</div><div class="logo-contain"><img class="logo" src="images/logo.png"/><div class="logo-text">WebCoder49</div></div></nav>
-        <div id="sliding-nav"><div class="nav-button" onclick="document.getElementById('sliding-nav').className = ''; document.getElementById('nav-button').className = '';">&times;</div><h1> Contents</h1><br/>
-        <ul>
-            <a href="#"><li class="current">HOME</li></a>
-            <a href="learn"><li class="">LEARN with Video Tutorials</li></a>
-            <a href="projects"><li class="">SEE and PLAY my projects</li></a>
-        </ul>
+    <body onclick="//this.classList.toggle('modal-open');">
+        <div id="modal-overlay"></div>
+        <div id="modal">
+            <h1 id="project-title">Not A Project</h1><a href="./"><span class="close">&times;</span></a>
+            <div class="contents">
+            <div class="column-l">
+                <h2 id="project-description"><span contenteditable>Well, you can type here as I do not know what to put in the description of a project that <b>does not exist</b>. Go on, try it!</span></h2>
+                <img id="project-image" src="images/banner.png"/>
+                <div id="project-contents">
+                <p>Oops. This project may have been renamed or deleted. Please see all my projects <a href="./">here</a>.</p>
+                </div>
+            </div>
+            <div class="column-r">
+                <h2>Details</h2>
+                <p>
+                    <b>Developed by: </b> <span id="project-authors">WebCoder49</span><br/>
+                    <b>Date Published: </b> <span id="project-date">WebCoder49</span><br/>
+                    <b>Categories: </b> <span id="project-categories">HTML, CSS, JavaScript, Web Dev</span><br/>
+                </p>
+                <h2>Share</h2>
+                <p><button onclick="share(this);">Share 💨</button><br/><button onclick="email(this);">Email 📧</button></p>
+            </div>
         </div>
+        </div>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <main>
-        <div class="banner" style="background-image: url('images/banner.png');">
-        <div class="banner-text">
-            <h1>WebCoder49</h1>
-                <h2>Enter the World of Web Development...</h2>
-                </div></div>
-            <iframe style="height: 90vh; width: 100%; margin: 0; padding: 0;" src="https://webcoder49.github.io/">
-                <h1>About Me and This Site</h1>
-                <h2>About Me</h2>
-                <p>Hello! I am <b>WebCoder49</b>, a keen programmer and <b>web developer</b> who likes creating <b>websites</b> like this one and other projects!</p>
-                <p>I put many of my projects and many tutorials <b>online</b>, so others can realise how <b>many different programs</b> you can make with web development and <b>learn</b> the codes themselves! With web development, you can create <b>websites</b>, <b>videogames</b>, <b>multiplayer videogames</b> (using a website server), <b>web apps</b> and <b>much more</b>! If this sounds like something you would like to do, why not see the <b>video tutorials</b> on my <a href="https://www.youtube.com/channel/UCRGa9FlO3g-InDThc9Qk6Lw" target="_blank">YouTube channel</a>?</p>
-                <h3>Find Me Online</h3>
-                <p>You can find my tutorials and projects I am creating and have created at the following sites: </p>
-                <ul>
-                    <li><a href="https://github.com/WebCoder49" target="_blank">GitHub/WebCoder49</a> <b>(for some of my projects)</b></li>
-                    <li><a href="https://repl.it/@OG49" target="_blank">Repl.it/@OG49</a> <b>(for some of my projects)</b></li>
-                    <li><a href="https://www.youtube.com/channel/UCRGa9FlO3g-InDThc9Qk6Lw" target="_blank">YouTube/WebCoder49</a> <b>(for video tutorials)</b></li>
-                </ul>
-                <h2>This Site</h2>
-                <p>This site was created on <a href="https://pages.github.com">GitHub Pages</a>, which is free. If you <b>want to create your own website for free</b>, why not use GitHub Pages? You'll have to set up an account, however.</p>
-                <p>This site is the centre where I will put my <b>projects</b>, <b>video tutorials</b> and more! To <b>start navigating</b> the site, just press the navicon( &#9776 ) at the top.</p>
-                <h2>A Surprise...</h1>
-                    <div class="dropdown">
-                        <h1 onclick="this.parentElement.classList.toggle('open');">Click here...</h1>
-                        <h4>Boo!</h4>
-                        <p>When you see dropdown menus like this, click them to <b>find out more!</b></p>
-                    </div></iframe>
-    </main>
-    </body>
+    </main></body>
 </html>
