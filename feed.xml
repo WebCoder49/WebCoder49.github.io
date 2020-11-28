@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+
+<channel>
+<title>WebCoder49's Projects</title>
+  <link>https://www.webcoder49.gtihub.io</link>
+  <description>Websites, Videogames, Tutorials and more!</description><item>
+    <title>You Are A Cat! Game</title>
+    <link>https://webcoder49.github.io/#youareacat</link>
+    <description>In this videogame, you are a cat exploring a <b>world</b> of pixels!</description>
+    <pubDate>Mon, 7 Sep 2020</pubDate>
+<image>
+    <url>https://img.itch.zone/aW1nLzQxOTMwOTcucG5n/original/3EVOIn.png</url>
+    <title>You Are A Cat! Game</title>
+    <link>https://webcoder49.github.io/#youareacat</link>
+  </image>
+</item></channel>
+
+</rss>
