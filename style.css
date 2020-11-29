@@ -55,6 +55,9 @@ main {
     padding: 0;
     float: left;
 }
+.title {
+    width: calc(100% - 40px);
+}
 .project .description {
     height: 90%;
     width: 50%;
@@ -111,6 +114,7 @@ main {
     color: white;
     text-align: center;
     text-overflow: ellipsis;
+    text-shadow: 0 0 transparent;
 }
 
 .project:hover .description {
@@ -234,9 +238,34 @@ main {
     background-color: beige;
     border: 1px solid #808000;
     color: #000080;
+    padding: 0.5em;
 }
 #modal button:hover {
     background-color: yellow;
     border: 1px solid gold;
     color: blue;
+}
+.icon {
+    height: 2em;
+    margin: 0.5em;
+}
+#modal button .icon {
+    height: 2em;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.description .logo {
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+    height: 30px;
+    width: 30px;
+}
+a {
+    color: blue;
+    text-shadow: 1px 2px white;
+}
+
+a:hover {
+    text-shadow: -1px 2px yellow;
 }
