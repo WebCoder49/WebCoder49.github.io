@@ -8,35 +8,56 @@
         <link href="style.css" rel="stylesheet">
         <script src="script.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
         <!--favicon-->
         <link rel="icon" href="images/logo-square.png" type="image/png">
     </head>
-    <body onclick="//this.classList.toggle('modal-open');">
-        <div id="modal-overlay"></div>
-        <div id="modal">
-            <h1 id="project-title">Not A Project</h1><a href="#" onclick="document.documentElement.classList.remove('modal-open');"><span class="close">&times;</span></a>
-            <div class="contents">
-            <div class="column-l">
-                <h2 id="project-description"><span contenteditable>Well, you can type here as I do not know what to put in the description of a project that <b>does not exist</b>. Go on, try it!</span></h2>
-                <img id="project-image" src="images/banner.png"/>
-                <div id="project-contents">
-                <p>Oops. This project may have been renamed or deleted. Please see all my projects <a href="./">here</a>.</p>
+    <body>
+        <div id="modal-overlay">
+            <div id="modal">
+                <h1 id="project-title">Not A Project</h1><span class="close" onclick="closeModal(document.querySelector('#modal-overlay'));">&times;</span>
+                <div class="contents">
+                    <div class="column-l">
+                        <h2 id="project-description"><span contenteditable>Well, you can type here as I do not know what to put in the description of a project that <b>does not exist</b>. Go on, try it!</span></h2>
+                        <img id="project-image" src="images/banner.png"/>
+                        <div id="project-contents">
+                        <p>Oops. This project may have been renamed or deleted. Please see all my projects <a href="./">here</a>.</p>
+                        </div>
+                    </div>
+                    <div class="column-r">
+                        <h2>Details</h2>
+                        <p>
+                            <b>Developed by: </b> <span id="project-authors">WebCoder49</span><br/>
+                            <b>Date Published: </b> <span id="project-date"> (What? It can't have been created on a certain date. It doesn't even exist!)</span><br/>
+                            <b>Categories: </b> <span id="project-categories">HTML, CSS, JavaScript, Web Dev</span></p><p>
+                            <b>Made and hosted on <span id="project-logo-name">GitHub Pages</span> <img id="project-logo" class="icon" src="images/icons/github.png"/></b><br/>
+                        </p>
+                        <h2>Share</h2>
+                        <p><button onclick="share(this);">Share <img class='icon' src='images/icons/share.png'/></button><br/><button onclick="email(this);">Email <img class='icon' src='images/icons/email.svg'/></button></p>
+                    </div>
                 </div>
             </div>
-            <div class="column-r">
-                <h2>Details</h2>
-                <p>
-                    <b>Developed by: </b> <span id="project-authors">WebCoder49</span><br/>
-                    <b>Date Published: </b> <span id="project-date"> (What? It can't have been created on a certain date. It doesn't even exist!)</span><br/>
-                    <b>Categories: </b> <span id="project-categories">HTML, CSS, JavaScript, Web Dev</span></p><p>
-                    <b>Made and hosted on <span id="project-logo-name">GitHub Pages</span> <img id="project-logo" class="icon" src="images/icons/github.png"/></b><br/>
-                </p>
-                <h2>Share</h2>
-                <p><button onclick="share(this);">Share <img class='icon' src='images/icons/share.png'/></button><br/><button onclick="email(this);">Email <img class='icon' src='images/icons/email.svg'/></button></p>
-            </div>
         </div>
-        </div>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <main>
+            <div class="card title">
+                <p class="ribbon"><b>WebCoder49</b><br>
+                    <img src="images/logo.png" class="icon"/><img src="images/icons/coding.png" class="icon"/></p>
+                <p>I'm a keen <b>programmer</b>, and I enjoy coding <b>computer games, websites, maths-based projects</b> and anything else that includes problem solving! <br>
+                    <img src="images/icons/website.png" class="icon">
+                </p>
+                <p>
+                    <b>Find me Online:</b><br/>
+                    <a href="https://github.com/WebCoder49" target="_blank" title="GitHub" class="social"><img src="images/icons/github.png" class="icon"/></a>
+                    <a href="https://replit.com/@OG49" target="_blank" title="Replit" class="social"><img src="images/icons/coding.png" class="icon"/></a>
+                    <a href="https://webcoder49.itch.io/" target="_blank" title="Games on itch.io" class="social"><img src="images/icons/joystick.png" class="icon"/></a>
+                    <a href="https://codepen.io/WebCoder49" target="_blank" title="CodePen" class="social"><img src="images/icons/codepen.png" class="icon"/></a>
+                    <a href="https://webcoder49.wordpress.com/" target="_blank" title="My blog" class="social"><img src="images/icons/wordpress.png" class="icon"/></a>
+                    <a href="https://www.youtube.com/channel/UCRGa9FlO3g-InDThc9Qk6Lw" target="_blank" title="YouTube" class="social"><img src="images/icons/youtube.svg" class="icon"/></a>
+                </p>
+                <p class="ribbon">
+                    <input type="text" id="searchbar" placeholder="Search for projects" oninput="search(this.value, document.querySelector('#searchresults'));"/>
+                </p>
+            </div>
+            <div class="ribbon" id="searchresults"></div>
     </main></body>
 </html>

@@ -1,11 +1,17 @@
 if(location.hash != "" && location.hash != "#" && location.hash != undefined && location.hash != null) {
     window.onload = function() {
-        loadProject(location.hash.substr(1));
+        if(location.hash.substr(1) in projects) {
+            loadProject(location.hash.substr(1));
+        } else {
+            document.querySelector("main").innerHTML += "<div class='card can-be-closed'><span class='close' onclick='this.parentElement.classList.toggle(\"closed\");'>×</span><p><em>The project in the link could not be found. It may have been renamed or deleted.</em></p>";
+        }
         addCards();
+        window.onload = function() {};
     }
 } else {
     window.onload = function() {
         addCards();
+        window.onload = function() {};
     };
 }
 
@@ -24,23 +30,24 @@ const logoNames = {
     web: "the WorldWide Web",
     rss: "an RSS feed",
     codepen: "CodePen",
-    replit: "Repl.it",
+    replit: "Replit",
     itchio: "itch.io",
     wordpress: "WordPress",
     youtube: "YouTube"
 }
 
 function addCards() {
-    cards.forEach(function(item) {
+    for(let i = 0; i < cards.length; i++) {
+        let item = cards[i];
         if(item[0] == "p") {
             project = projects[item[1]];
-            document.getElementsByTagName("main")[0].innerHTML += '<a href="#' + item[1] + '" onclick="loadProject(\'' + item[1] + '\');"><div class=\"project card\" title="View Details and Open ' + project.title + '" style=\"background-image: url(\' ' + project.image + ' \');\">\r\n<div class=\"description\">\r\n<p>' + project.description + '<\/p>\r\n<img src="' + logos[project.logo] + '" title="Made and Hosted on ' + logoNames[project.logo] + '" class="logo"/><\/div>\r\n<div class=\"title\">' + project.title + '<\/div>\r\n<\/div></a>'
+            document.getElementsByTagName("main")[0].innerHTML += `<a href="#${item[1]}" onclick="loadProject(\'${item[1]}\');"><div class=\"project card\" title="View Details and Open ${project.title}" style=\"background-image: url(\' ${project.image} \');\">\r\n<div class=\"title\">${project.title}<\/div>\r\n<div class=\"description\">\r\n<p>${project.description}<\/p>\r\n<img src="${logos[project.logo]}" title="Made and Hosted on ${logoNames[project.logo]}" class="logo"/><\/div>\r\n<\/div></a>`;
         } else if(item[0] == "c") {
-            document.getElementsByTagName("main")[0].innerHTML += '<div class=\"card\"><p>' + item[1] + '</p><\/div>';
+            document.getElementsByTagName("main")[0].innerHTML += `<div class=\"card\"><p>${item[1]}</p><\/div>`;
         } else if(item[0] == "t") {
-            document.getElementsByTagName("main")[0].innerHTML += '<div class=\"card title\"><p>' + item[1] + '</p><\/div>';
+            document.getElementsByTagName("main")[0].innerHTML += `<div class=\"card title\"><p>${item[1]}</p><\/div>`;
         }
-    });
+    }
 }
 
 const projects = {
@@ -54,72 +61,6 @@ const projects = {
         categories: ["HTML5 Canvas", "JavaScript", "Videogames", "Free"],
         link: "https://webcoder49.itch.io/youareacat-game",
         logo: "itchio"
-    },
-    blog: {
-        title: "My Blog",
-        description: "<b>Tutorials, Quick Tips</b> and <b>more!</b>",
-        image: "images/blog.png",
-        body: "<p>Hello! I am WebCoder49,  a <b>keen coder and web developer</b>! I created this website and blog, <a href='https://webcoder49.wordpress.com/'>webcoder49.wordpress.com</a>, to <b>teach you how to code the web</b> and learn codes which let you <b>be creative</b>! I will also use it to showcase my <b>projects</b>, so you can play and enjoy them, as well as being able to <b>see the code</b>!</p>",
-        authors: "WebCoder49",
-        date: "Mon, 7 Sep 2020",
-        categories: ["Free", "HTML", "CSS", "JavaScript", "Tutorials"],
-        link: "https://webcoder49.wordpress.com/",
-        logo: "wordpress"
-    },
-    itchio: {
-        title: "My itch.io Games",
-        description: "<b>My videogames, in one place!</b>",
-        image: "images/itchio.png",
-        body: '<p>Hello! This is where you can <strong>play the games I have coded</strong>. If you want to <strong>learn how to code games like this</strong>, please go to <a href="http://webcoder49.wordpress.com" >my website</a> or&nbsp;<a href="https://www.youtube.com/channel/UCRGa9FlO3g-InDThc9Qk6Lw" >my YouTube channel</a> where you can find <strong>tutorials on web development.</strong> I put <strong>other coding projects</strong> on <a href="https://repl.it/@OG49" >repl.it</a> and <a href="https://github.com/WebCoder49" >GitHub</a>. Just follow the links to <strong>see more&nbsp;</strong>or <strong>play my games here, at <a href="https://webcoder49.itch.io/">webcoder49.itch.io</a>!</strong></p>',
-        authors: "WebCoder49 and others",
-        date: "Sun, 06 Sep 2020",
-        categories: ["Free", "Videogames"],
-        link: "https://webcoder49.itch.io/",
-        logo: "itchio"
-    },
-    youtube: {
-        title: "My YouTube channel",
-        description: "<b>Videos, Game run-throughs</b> and <b>more!</b>",
-        image: "images/youtube.png",
-        body: '<h2><a href="https://www.youtube.com/channel/UCRGa9FlO3g-InDThc9Qk6Lw?sub_confirmation=1">Please like and subscribe!<img class="icon" src="images/icons/thumbsup.svg"/></a></h2><p><b>Please <a href=\"https:\/\/www.youtube.com\/channel\/UCRGa9FlO3g-InDThc9Qk6Lw\/\">start watching my videos by clicking here<\/a>, or read the description below...<\/b>\r\n\r\n<iframe width=\"424\" height=\"238\" src=\"https:\/\/www.youtube.com\/embed\/QTy_Pdzplys\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen><\/iframe>\r\n\r\n<p>Hello! This channel aims to teach you and show you how many different things can be made on the web, from computer games to websites and prime number programs.<\/p>\r\n\r\n<p>To see what I\'ve made using HTML, CSS and JavaScript (coding languages on the web), see my site below and enter the world of web development!<\/p>\r\n\r\n<p><a href=\"https:\/\/webcoder49.wordpress.com\">https:\/\/webcoder49.wordpress.com<\/a><\/p>\r\n\r\n<p>If you don\'t want to learn web development, you can have fun playing these games, but if you do want to learn it, why not learn it?<\/p>\r\n\r\n<p>The coding languages that make up the web are very useful as they can be used to create many different programs! Web development can be your hobby in the future, or even your job if you work hard enough! Once you\'ve started learning, you can release your creativity in code!<\/p>\r\n\r\n<p>What can you create?<br\/>\r\n<\/p>',
-        authors: "WebCoder49",
-        date: "Thu, 23 Jul 2020",
-        categories: ["Free", "Videos", "Tutorials", "HTML", "CSS", "JavaScript"],
-        link: "https://www.youtube.com/channel/UCRGa9FlO3g-InDThc9Qk6Lw",
-        logo: "youtube"
-    },
-    github: {
-        title: "GitHub",
-        description: "View my open-source code.",
-        image: "images/github.png",
-        body: '<p>My GitHub account is <a href="https://github.com/webcoder49/">@WebCoder49</a>.</p>',
-        authors: "WebCoder49",
-        date: "Sat, 1 Aug 2020",
-        categories: ["Free", "Source Code"],
-        link: "https://github.com/webcoder49/",
-        logo: "github"
-    },
-    replit: {
-        title: "Repl.it",
-        description: "View the code for some of my projects.",
-        image: "images/replit.png",
-        body: '<p>My Repl.it account is <a href="https://repl.it/@OG49/">@OG49</a>.</p>',
-        authors: "WebCoder49",
-        date: "Sat, 1 Aug 2020",
-        categories: ["Free", "Source Code"],
-        link: "https://repl.it/@OG49/",
-        logo: "replit"
-    },
-    codepen: {
-        title: "CodePen",
-        description: "View the code for my small, front-end design projects.",
-        image: "images/codepen.png",
-        body: '<p>My CodePen account is <a href="https://codepen.io/WebCoder49/">@WebCoder49</a>.</p>',
-        authors: "WebCoder49",
-        date: "Sun, 16 Aug 2020",
-        categories: ["Free", "Source Code"],
-        link: "https://codepen.io/WebCoder49/",
-        logo: "codepen"
     },
     guessthehexcolour: {
         title: "Guess the HEX colour!",
@@ -223,14 +164,6 @@ const projects = {
 }
 
 const cards = [
-    ["t", "<u><b><img src='images/logo.png' class='icon'/> WebCoder49 <img src='images/icons/coding.png' class='icon'/></b></u><br/> <br/>I'm a keen <b>programmer and web developer</b> who enjoys coding <b>videogames, websites, and maths-based projects</b>, as well as the occasional <b>tutorial</b>. <br/><img src='images/icons/website.png' class='icon'/>"],
-    ["t", "<b>My other websites</b>"],
-    ["p", "blog"],
-    ["p", "itchio"],
-    ["p", "youtube"],
-    ["p", "github"],
-    ["p", "replit"],
-    ["p", "codepen"],
     ["t", "<b>Videogames and other games</b>"],
     ["p", "youareacat"],
     ["p", "guessthehexcolour"],
@@ -253,7 +186,7 @@ const cards = [
 let currentProject = "";
 function loadProject(projectID) {
     currentProject = projectID;
-    document.documentElement.classList.add("modal-open");
+    document.getElementById("modal-overlay").classList.add("modal-open");
     project = projects[projectID];
     document.getElementById("project-title").innerHTML = project.title;
     document.getElementById("project-description").innerHTML = project.description;
@@ -262,9 +195,9 @@ function loadProject(projectID) {
         document.getElementById("project-contents").innerHTML = project.body;
     } else {
         if(project.body == undefined) {
-            document.getElementById("project-contents").innerHTML = "<a href='" + project.link + "'><button style='font-size: 30px;''>Direct Link <img class='icon' src='images/icons/link.svg'/></button></a>";
+            document.getElementById("project-contents").innerHTML = "<a href='" + project.link + "'><button style='font-size: 30px; text-align: center; width: 100%;''>Launch Project <img class='icon' src='images/icons/link.svg'/></button></a>";
         } else {
-            document.getElementById("project-contents").innerHTML = project.body + "<a href='" + project.link + "'><button style='font-size: 30px;''>Direct Link <img class='icon' src='images/icons/link.svg'/></button></a>";
+            document.getElementById("project-contents").innerHTML = "<a href='" + project.link + "' target='project-tab'><button style='font-size: 30px; text-align: center; width: 100%;''>Launch Project <img class='icon' src='images/icons/link.svg'/></button></a>" + project.body;
         }
     }
     document.getElementById("project-authors").innerHTML = project.authors;
@@ -272,6 +205,15 @@ function loadProject(projectID) {
     document.getElementById("project-categories").innerHTML = project.categories.join(", ");
     document.getElementById("project-logo-name").innerHTML = logoNames[project.logo];
     document.getElementById("project-logo").src = logos[project.logo];
+}
+function closeModal(modal) {
+    let scroll_pos = document.documentElement.scrollTop;
+    console.log(scroll_pos);
+
+    modal.classList.remove('modal-open');
+    document.location.hash = '#';
+
+    document.documentElement.scrollTop = scroll_pos;
 }
 
 function share(button) {
@@ -285,7 +227,7 @@ function share(button) {
             url: location.href
           }
         );
-        button.innerHTML = "Done! <img class='icon' src='images/icons/thumbsup.svg'/>";
+        button.innerHTML = "Done! <img class='icon' src='images/icons/thumbsup.png'/>";
         setTimeout(function() {
             button.innerHTML = "Share <img class='icon' src='images/icons/share.png'/>";
         }, 3000);
@@ -299,7 +241,7 @@ function email(button) {
         
         window.open("mailto:?subject=" + encodeURIComponent(project.title) + "&body=" + encodeURIComponent(project.description + "\n\n Link: " + location.href))
 
-        button.innerHTML = "Done! <img class='icon' src='images/icons/thumbsup.svg'/>";
+        button.innerHTML = "Done! <img class='icon' src='images/icons/thumbsup.png'/>";
         setTimeout(function() {
             button.innerHTML = "Email <img class='icon' src='images/icons/email.svg'/>";
         }, 3000);
@@ -314,4 +256,78 @@ function rss() {
     }
     feed += "<\/channel>\r\n\r\n<\/rss>";
     return feed;
+}
+function r() {
+    document.write("<h1>RSS Feed Code</h1><h2>(Please reload if you are not a developer.)</h2><pre><code id='code'></code></pre>");
+    document.getElementById("code").innerText = rss();
+}
+
+/* Search projects */
+function search(query, output) {
+    if(query != "" && query != " ") {
+
+        output.innerHTML = `<div class="title card"><p><span id="search-result-number">Loading</span> search result(s) for '${query}'</p></div>`;
+        query = query.toUpperCase(); // Case insensitive
+        let words = query.split(" ");
+
+        /* Get project relevances */
+        let projects_by_relevance = {};
+        for(project in projects) {
+            projects_by_relevance[project] = 0;
+        }
+
+        if(projects[project].title.toUpperCase().includes(query)) {
+            projects_by_relevance[project] += 50; // 50 for exact title match
+        }
+        if(projects[project].description.toUpperCase().includes(query)) {
+            projects_by_relevance[project] += 10; // 10 for exact description match
+        }
+        if(projects[project].body.toUpperCase().includes(query)) {
+            projects_by_relevance[project] += 5; // 5 for exact body match
+        }
+
+        for(let i = 0; i < words.length; i++) {
+            word = words[i];
+
+            if(word != "") {
+                for(project in projects_by_relevance) {
+                    if(projects[project].title.toUpperCase().includes(word)) {
+                        projects_by_relevance[project] += 25; // 25 for title match
+                    }
+                    if(projects[project].description.toUpperCase().includes(word)) {
+                        projects_by_relevance[project] += 4; // 4 for description match
+                    }
+                    if(projects[project].body.toUpperCase().includes(word)) {
+                        projects_by_relevance[project] += 1; // 1 for body match
+                    }
+                }
+            }
+        }
+        console.log(projects_by_relevance);
+        search_results = [];
+        for(project in projects_by_relevance) {
+            search_results.push({
+                relevance: projects_by_relevance[project],
+                project: project
+            });
+        }
+        search_results.sort(function(a, b) {
+            // Descending order by relevance
+            b.relevance - a.relevance;
+        });
+
+        let n_results = 0;
+        // Print results
+        for(let i = 0; i < search_results.length; i++) {
+            let result = search_results[i];
+            if(result.relevance > 0) {
+                n_results++;
+                let project = projects[result.project];
+                output.innerHTML += `<a href="#${result.project}" onclick="loadProject(\'${result.project}\');"><div class=\"project card\" title="View Details and Open ${project.title}" style=\"background-image: url(\' ${project.image} \');\">\r\n<div class=\"title\">${project.title}<\/div>\r\n<div class=\"description\">\r\n<p>${project.description}<\/p>\r\n<img src="${logos[project.logo]}" title="Made and Hosted on ${logoNames[project.logo]}" class="logo"/><\/div>\r\n<\/div></a>`;
+            }
+        }
+        document.getElementById("search-result-number").innerHTML = n_results;
+    } else {
+        output.innerHTML = "";
+    }
 }
