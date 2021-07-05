@@ -44,7 +44,7 @@ pre:not(pre[class*="language-"]), pre code:not(pre code[class*="language-"]):not
 /* Code blocks */
 pre[class*="language-"] {
 	padding: 1em;
-	padding-top: 2em; /* edited */
+	padding-top: 2.5em; /* edited */
 	margin: .5em 0;
 	overflow: auto;
 }
@@ -172,7 +172,7 @@ pre[class*="language-"] {
 
 /* edited */
 pre[class*="language-"]:before {
-	content: attr(data-title);
+	content: attr(data-title) " ⁕";
 	font-family: "Recursive", monospace;
 	position: absolute;
 	top: 0.25em;
@@ -212,4 +212,8 @@ pre[class*="language-"]::-webkit-scrollbar-track {
 pre[class*="language-"]::-webkit-scrollbar-thumb {
 	background: #ededed;
 	background: linear-gradient(135deg, #ffffff, #888888);
+}
+
+.snippet pre[class*="language-"] {
+	margin: 0!important;
 }

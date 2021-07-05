@@ -69,7 +69,7 @@ main {
         width: 96vw!important;
         margin: 2vw!important;
     }
-    .card:not(.title) {
+    .card:not(:is(.title, .snippet)) {
         min-height: 59vw!important;
     }
 }
@@ -88,7 +88,7 @@ main {
         width: 1320px;
     }
 }
-.card:not(.title) {
+.card:not(:is(.title, .snippet)) {
     min-height: 247px;
 }
 .card {
@@ -109,7 +109,7 @@ main {
     padding-right: 1em;
     width: calc(400px - 1em);
 }
-.title.can-be-closed {
+:is(.title, .snippet).can-be-closed {
     width: calc(100% - 40px - 1em)!important;
 }
 .can-be-closed .close {
@@ -135,7 +135,7 @@ main {
 .can-be-closed.closed {
     display: none;
 }
-.title {
+:is(.title, .snippet) {
     width: calc(100% - 40px);
 }
 .project .description {
@@ -214,10 +214,10 @@ div.ribbon {
     box-shadow: inset 5px 5px var(--shadow-2);
 }
 
-.title {
+:is(.title, .snippet) {
     min-height: unset!important;
 }
-.project .title {
+.project :is(.title, .snippet) {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -236,7 +236,7 @@ div.ribbon {
     left: 0;
     background-color: var(--fg-1);
 }
-.project:hover .title {
+.project:hover :is(.title, .snippet) {
     text-decoration: underline;
     color: var(--emphasis-2);
     background: var(--ribbon-bg);
@@ -420,10 +420,10 @@ a:hover {
     animation-duration: 2s;
     animation-iteration-count: 1;
 }
-.card.title:nth-of-type(1) {
+.card:is(.title, .snippet):nth-of-type(1) {
     animation-delay: -2s;
 }
-.card.title {
+.card:is(.title, .snippet) {
     animation-delay: -1s;
 }
 @media (min-width: 1320px) {
