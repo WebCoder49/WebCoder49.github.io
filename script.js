@@ -65,26 +65,6 @@ function addCards() {
     }
 }
 
-const cards = [
-    ["t", "<b>Videogames and other games</b>"],
-    ["p", "youareacat"],
-    ["p", "guessthehexcolour"],
-    ["p", "battlepythonconsole"],
-    ["p", "cssonlygame"],
-    ["t", "<b>Maths and Science Projects</b>"],
-    ["p", "turingtape"],
-    ["p", "unicodechargenerator"],
-    ["p", "safekey"],
-    ["p", "phrasetogradient"],
-    ["t", "<b>Collaborative Projects</b>"],
-    ["p", "namethecolourproject"],
-    ["t", "<b>Other Projects</b>"],
-    ["p", "hashtagfinder"],
-    ["t", "<img class='icon' src='images/icons/coding.png'/><img class='icon' src='images/icons/joystick.png'/><img class='icon' src='images/icons/website.png'/><img class='icon' src='images/icons/wordpress.png'/><img class='icon' src='images/icons/youtube.svg'/><img class='icon' src='images/icons/github.png'/><img class='icon' src='images/icons/rss.svg'/><img class='icon' src='images/icons/codepen.png'/>"],
-    ["c", "<img class='icon' src='images/icons/rss.svg'/><a href='feed.xml'>View the RSS feed here!</a>"],
-    ["c", 'Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>, and fonts by <a href="https://fonts.google.com">Google Fonts</a>.<br/><br/>Hosted on <a href="pages.github.com">GitHub Pages</a>. <img class="icon" src="images/icons/github.png"/><br/><br/>This page uses <a href="https://jquery.com/">jQuery</a> to load projects using AJAX.']
-];
-
 let currentProject = "";
 function loadProject(projectID) {
     currentProject = projectID;
