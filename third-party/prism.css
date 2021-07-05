@@ -185,7 +185,6 @@ pre[class*="language-"]:before {
 	-webkit-background-clip: text;
 	-moz-background-clip: text;
 	-webkit-text-fill-color: transparent;
-	text-decoration: underline;
 	text-wrap: nowrap;
 	text-overflow: ellipsis;
 	overflow: hidden;
