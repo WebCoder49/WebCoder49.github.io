@@ -1,35 +1,55 @@
+:root {
+    --title-font: 'Recursive';
+    --main-font: 'Source Code Pro';
+    /* Colour Theme */
+    --bg-1: lightblue;
+    --bg-2: beige;
+    --bg-3: #ffff88;
+    --fg-1: navy;
+    --fg-2: blue;
+    --fg-3: #808000;
+    --emphasis-1: white;
+    --emphasis-2: yellow;
+    --emphasis-3: gold;
+    --shadow-1: #00008088;
+    --shadow-2: #ffff0088;
+    --ribbon-bg: navy;
+    --ribbon-bg-transparent: #1f1f2c88;
+    --ribbon-fg: white;
+}
+
 ::-webkit-scrollbar {
     width: 15px;
 }
 ::-webkit-scrollbar-track {
-    background: lightblue;
+    background: var(--bg-1);
 }
 ::-webkit-scrollbar-thumb {
     border-radius: 7.5px;
-    background: navy;
+    background: var(--fg-1);
 }
 ::selection {
-    background: navy;
-    color: yellow;
+    background: var(--ribbon-bg);
+    color: var(--emphasis-2);
     text-shadow: none;
 }
 
 * {
-    font-family: 'Source Code Pro', monospace;
+    font-family: var(--main-font), monospace;
     transition: all 0.5s;
 }
 body {
     text-align: center;
     margin: 0;
     padding: 0;
-    background-color: lightblue;
+    background-color: var(--bg-1);
 }
 main {
     left: 50%;
     transform: translate(-50%, 0);
     position: absolute;
     width: 100%;
-    background-color: beige;
+    background-color: var(--bg-2);
     margin-bottom: 20px;
 }
 @media (max-width: 440px) {
@@ -64,13 +84,13 @@ main {
 }
 .card {
     width: 400px;
-    background-color: #ffff88;
+    background-color: var(--bg-3);
     overflow: hidden;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     position: relative;
-    box-shadow: 2px 2px #00008088;
+    box-shadow: 2px 2px var(--shadow-1);
     margin: 20px;
     padding: 0;
     float: left;
@@ -96,12 +116,12 @@ main {
     text-align: center;
     border-radius: 0;
     border-bottom-left-radius: 1em;
-    background-color: lightblue;
+    background-color: var(--bg-1);
     cursor: pointer;
 }
 .can-be-closed .close:hover {
-    background-color: navy;
-    color: white;
+    background-color: var(--ribbon-bg);
+    color: var(--ribbon-fg);
 }
 .can-be-closed.closed {
     display: none;
@@ -131,9 +151,9 @@ main {
     width: 50%;
     height: unset;
     transform: translate(0, -50%);
-    color: #000080;
+    color: var(--fg-1);
     font-size: 20px;
-    text-shadow: 1px 1px white;
+    text-shadow: 1px 1px var(--emphasis-1);
     text-overflow: ellipsis;
     max-height: 100%;
     overflow: hidden;
@@ -149,22 +169,22 @@ main {
     padding-bottom: 1em;
     padding-left: 0.5em;
     padding-right: 0.5em;
-    color: #000080;
+    color: var(--fg-1);
     font-size: 20px;
-    text-shadow: 1px 1px white;
+    text-shadow: 1px 1px var(--emphasis-1);
     text-overflow: ellipsis;
     overflow: hidden;
 }
 .card p.ribbon, .card form.ribbon {
-    background: navy;
-    border-top: 2px solid white;
-    border-bottom: 2px solid white;
-    color: white;
+    background: var(--ribbon-bg);
+    border-top: 2px solid var(--ribbon-fg);
+    border-bottom: 2px solid var(--ribbon-fg);
+    color: var(--ribbon-fg);
     text-shadow: none;
 }
 
 div.ribbon {
-    background: lightblue;
+    background: var(--bg-1);
     float: left;
     width: 100%;
     margin: 0;
@@ -172,17 +192,17 @@ div.ribbon {
 }
 
 #searchbar {
-    background: beige;
-    color: navy;
+    background: var(--bg-2);
+    color: var(--fg-1);
     font-size: 1em;
     text-align: center;
-    border: 2px solid white;
+    border: 2px solid var(--ribbon-fg);
     border-radius: 2px;
-    box-shadow: inset 2px 2px #00008088;
+    box-shadow: inset 2px 2px var(--shadow-1);
 }
 #searchbar:focus {
     outline: none;
-    box-shadow: inset 5px 5px #ffff0088;
+    box-shadow: inset 5px 5px var(--shadow-2);
 }
 
 .title {
@@ -194,10 +214,10 @@ div.ribbon {
     left: 0;
     height: 10%;
     width: 100%;
-    background-color: #00008088;
-    font-family: "Recursive";
+    background-color: var(--ribbon-bg-transparent);
+    font-family: var(--title-font);
     font-size: 20px;
-    color: white;
+    color: var(--ribbon-fg);
     text-align: center;
     text-overflow: ellipsis;
     text-shadow: 0 0 transparent;
@@ -205,15 +225,15 @@ div.ribbon {
 
 .project:hover .description {
     left: 0;
-    background-color: #000080;
+    background-color: var(--fg-1);
 }
 .project:hover .title {
     text-decoration: underline;
-    color: yellow;
-    background: #000080;
+    color: var(--emphasis-2);
+    background: var(--ribbon-bg);
 }
 .project:hover {
-    box-shadow: 5px 5px #ffff0088;
+    box-shadow: 5px 5px var(--shadow-2);
     cursor: pointer;
 }
 /*Modal*/
@@ -236,10 +256,10 @@ div.ribbon {
     left: 5%;
     height: 90%;
     width: 90%;
-    background-color: lightblue;
-    box-shadow: 5px 5px #00008088;
+    background-color: var(--bg-1);
+    box-shadow: 5px 5px var(--shadow-1);
     z-index: 2;
-    color: #000080;
+    color: var(--fg-1);
 }
 #modal h1 {
     height: 36px;
@@ -252,11 +272,12 @@ div.ribbon {
     text-overflow: ellipsis;
     white-space: nowrap;
     float: left;
-    border-bottom: 1px solid #000080;
+    border-bottom: 1px solid var(--fg-1);
+    font-family: var(--title-font);
 }
 #modal .close {
     text-decoration: none;
-    color: #000080;
+    color: var(--fg-1);
     width: 27px;
     height: 27px;
     border-radius: 50%;
@@ -268,15 +289,15 @@ div.ribbon {
     cursor: pointer;
 }
 #modal .close:hover {
-    border: 1px solid #000080;
-    background-color: #000080;
-    color: lightblue;
+    border: 1px solid var(--fg-1);
+    background-color: var(--fg-1);
+    color: var(--bg-1);
 }
 #modal .contents {
     width: 100%;
     margin: 0;
     padding: 0;
-    border-top: 1px solid #000080;
+    border-top: 1px solid var(--fg-1);
     height: calc(100% - 42px);
     overflow: auto;
 }
@@ -284,7 +305,7 @@ div.ribbon {
     width: 53%;
     margin: 0;
     padding: 2%;
-    border-right: 1px solid navy;
+    border-right: 1px solid var(--fg-1);
     float: left;
     text-align: left;
 }
@@ -300,7 +321,7 @@ div.ribbon {
         width: 96%;
         margin: 0;
         padding: 2%;
-        border-bottom: 1px solid navy;
+        border-bottom: 1px solid var(--fg-1);
         border-right: 0;
         float: left;
         text-align: left;
@@ -323,15 +344,15 @@ div.ribbon {
     pointer-events: all;
 }
 #modal button {
-    background-color: beige;
-    border: 1px solid #808000;
-    color: #000080;
+    background-color: var(--bg-2);
+    border: 1px solid var(--fg-3);
+    color: var(--fg-1);
     padding: 0.5em;
 }
 #modal button:hover {
-    background-color: yellow;
-    border: 1px solid gold;
-    color: blue;
+    background-color: var(--emphasis-2);
+    border: 1px solid var(--emphasis-3);
+    color: var(--fg-2);
 }
 .icon {
     height: 2em;
@@ -365,11 +386,11 @@ a.social img:hover {
 }
 a {
     color: blue;
-    text-shadow: 1px 2px white;
+    text-shadow: 1px 2px var(--emphasis-1);
 }
 
 a:hover {
-    text-shadow: -1px 2px yellow;
+    text-shadow: -1px 2px var(--emphasis-2);
 }
 
 /* Animations */

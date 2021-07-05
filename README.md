@@ -4,4 +4,4 @@ I'm a keen **programmer**, and I enjoy coding **computer games, websites, maths-
 
 At [webcoder49.github.io](https://webcoder49.github.io/), you can search, view and launch my projects. This is the GitHub repository containing all the code for it.
 
-![Screenshot of Portfolio](images/screenshot.png)
+[![Screenshot of Portfolio](images/screenshot.png)](https://webcoder49.github.io/)
