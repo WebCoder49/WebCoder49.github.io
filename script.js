@@ -1,12 +1,18 @@
 let projects = {};
+let cards = [["c", "<em>The projects or page structure could not be loaded using AJAX. It might work if you reload the page.</em>"]];
 
 /* Load data through AJAX */
 window.onload = function() {
     $.get("data/projects.json", function(data, status) {
         if(status == "success") {
             projects = data;
+            $.get("data/page.json", function(data, status) {
+                if(status == "success") {
+                    cards = data;
+                    onDataLoaded();
+                }
+            });
         }
-        onDataLoaded();
     });
 };
 
