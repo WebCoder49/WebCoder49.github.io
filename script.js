@@ -70,10 +70,10 @@ function addCards() {
         } else if(item[0] == "n") { // note
             document.getElementsByTagName("main")[0].innerHTML += `<div class=\"card can-be-closed\"><span class='close' onclick='this.parentElement.classList.toggle(\"closed\");'>×</span><p><em>${item[1]}</em></p><\/div>`;
         } else if(item[0] == "s") { // snippet
-            document.getElementsByTagName("main")[0].innerHTML += `<div class=\"card\"><pre><code class="language-${item[1]}" data-lang="${item[1]}" data-title="${item[2]}">${item[3].replace(new RegExp("&", "g"), "&amp;").replace(new RegExp("<", "g"), "&lt;")}</code></p><\/div>`;
+            document.getElementsByTagName("main")[0].innerHTML += `<div class=\"card snippet\"><pre class="language-${item[1]}" data-lang="${item[1]}" data-title="${item[2]}"><code>${item[3].replace(new RegExp("&", "g"), "&amp;").replace(new RegExp("<", "g"), "&lt;")}</code></p><\/div>`;
         }
     }
-    
+
     // Syntax highlight
     let preCodes = document.querySelectorAll("pre code");
     for(let i = 0; i < preCodes.length; i++) {
