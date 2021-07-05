@@ -1,30 +1,26 @@
 let projects = {};
 
 /* Load data through AJAX */
-$.get("data/projects.json", function(data, status) {
-    if(status == "success") {
-        projects = data;
-    }
-    onDataLoaded();
-});
+window.onload = function() {
+    $.get("data/projects.json", function(data, status) {
+        if(status == "success") {
+            projects = data;
+        }
+        onDataLoaded();
+    });
+};
 
 
 function onDataLoaded() {
     if(location.hash != "" && location.hash != "#" && location.hash != undefined && location.hash != null) {
-        window.onload = function() {
-            if(location.hash.substr(1) in projects) {
-                loadProject(location.hash.substr(1));
-            } else {
-                document.querySelector("main").innerHTML += "<div class='card can-be-closed'><span class='close' onclick='this.parentElement.classList.toggle(\"closed\");'>×</span><p><em>The project in the link could not be found. It may have been renamed or deleted.</em></p>";
-            }
-            addCards();
-            window.onload = function() {};
+        if(location.hash.substr(1) in projects) {
+            loadProject(location.hash.substr(1));
+        } else {
+            document.querySelector("main").innerHTML += "<div class='card can-be-closed'><span class='close' onclick='this.parentElement.classList.toggle(\"closed\");'>×</span><p><em>The project in the link could not be found. It may have been renamed or deleted.</em></p>";
         }
+        addCards();
     } else {
-        window.onload = function() {
-            addCards();
-            window.onload = function() {};
-        };
+        addCards();
     }
 }
 
