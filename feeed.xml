@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+
+<channel>
+<title>WebCoder49's Projects<\/title>
+  <link>https:\/\/www.webcoder49.gtihub.io<\/link>
+  <description>Websites, Videogames, Tutorials and more!<\/description><image>
+    <url>https:\/\/webcoder49.wordpress.com\/favicon.ico<\/url>
+    <title>WebCoder49<\/title>
+    <link>https:\/\/webcoder49.github.io\/<\/link>
+  <\/image>
+<item>
+    <title>You Are A Cat! Game<\/title>
+    <link>https://webcoder49.github.io/#youareacat<\/link>
+    <description>In this videogame, you are a cat exploring a <b>world</b> of pixels!<\/description>
+<pubDate>Mon, 7 Sep 2020<\/pubDate>
+<\/item>
+<item>
+    <title>Guess the HEX colour!<\/title>
+    <link>https://webcoder49.github.io/#guessthehexcolour<\/link>
+    <description>A python game which tests your knowledge of HEX colours...<\/description>
+<pubDate>Wed, 24 Jun 2020<\/pubDate>
+<\/item>
+<item>
+    <title>TuringTape<\/title>
+    <link>https://webcoder49.github.io/#turingtape<\/link>
+    <description>A <b>Turing Machine</b> simulation...<\/description>
+<pubDate>Fri, 26 Jul 2020<\/pubDate>
+<\/item>
+<item>
+    <title>Name the Colour!<\/title>
+    <link>https://webcoder49.github.io/#namethecolourproject<\/link>
+    <description>A <b>PHP project where you can name colours yourself</b> and <b>put them on the server!</b><\/description>
+<pubDate>Mon, 29 Jul 2020<\/pubDate>
+<\/item>
+<item>
+    <title>Unicode Character Generator<\/title>
+    <link>https://webcoder49.github.io/#unicodechargenerator<\/link>
+    <description><b>Every character on a computer has a code</b>, which you can find out!<\/description>
+<pubDate>Sat, 06 Jul 2020<\/pubDate>
+<\/item>
+<item>
+    <title>Hashtag Finder<\/title>
+    <link>https://webcoder49.github.io/#hashtagfinder<\/link>
+    <description><b>Search lots of social media platforms for a hashtag in just two clicks!</b><\/description>
+<pubDate>Fri, 05 Jul 2020<\/pubDate>
+<\/item>
+<item>
+    <title>SafeKey File Encrypter<\/title>
+    <link>https://webcoder49.github.io/#safekey<\/link>
+    <description><b>Encrypt files with a key only you know!</b><\/description>
+<pubDate>Thu, 22 Oct 2020<\/pubDate>
+<\/item>
+<item>
+    <title>Battle! - Python Console Game<\/title>
+    <link>https://webcoder49.github.io/#battlepythonconsole<\/link>
+    <description><b>Choose the characteristics of two characters, and make them battle in the Python console!</b><\/description>
+<pubDate>Fri, 05 Jul 2020<\/pubDate>
+<\/item>
+<item>
+    <title>Bubbles - the CSS-only game<\/title>
+    <link>https://webcoder49.github.io/#cssonlygame<\/link>
+    <description><b>A game made with only pure HTML and CSS...</b><\/description>
+<pubDate>Wed, 11 Nov 2020<\/pubDate>
+<\/item>
+<item>
+    <title>Phrase To Gradient<\/title>
+    <link>https://webcoder49.github.io/#phrasetogradient<\/link>
+    <description><b>An AI which converts phrases, words and numbers you type to a gradient - Each phrase has its unique gradient!</b><\/description>
+<pubDate>Fri, 05 Jul 2020<\/pubDate>
+<\/item>
+<\/channel>
+
+<\/rss>
