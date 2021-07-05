@@ -73,6 +73,12 @@ function addCards() {
             document.getElementsByTagName("main")[0].innerHTML += `<div class=\"card\"><pre><code class="language-${item[1]}" data-lang="${item[1]}" data-title="${item[2]}">${item[3].replace(new RegExp("&", "g"), "&amp;").replace(new RegExp("<", "g"), "&lt;")}</code></p><\/div>`;
         }
     }
+    
+    // Syntax highlight
+    let preCodes = document.querySelectorAll("pre code");
+    for(let i = 0; i < preCodes.length; i++) {
+        Prism.highlightElement(preCodes[i]);
+    }
 }
 
 let currentProject = "";

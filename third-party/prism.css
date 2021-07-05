@@ -35,6 +35,12 @@ pre[class*="language-"] {
 	left: 0;
 }
 
+/* Edited */
+pre:not(pre[class*="language-"]), pre code:not(pre code[class*="language-"]):not(pre[class*="language-"] code) {
+	color: transparent;
+	/* Hide before highlighting */
+}
+
 /* Code blocks */
 pre[class*="language-"] {
 	padding: 1em;
