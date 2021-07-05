@@ -1,8 +1,13 @@
-let projects = {};
-let cards = [["c", "<em>The projects or page structure could not be loaded using AJAX. It might work if you reload the page.</em>"]];
+var projects = {};
+var cards = [["n", "<em>The projects or page structure could not be loaded using AJAX. It might work if you reload the page.</em>"]];
 
 /* Load data through AJAX */
-window.onload = function() {
+function loadData() {
+    $(document).ajaxError(function(exc) {
+        projects = {};
+        cards = [["n", "The projects or page structure could not be loaded. Try checking you are connected to the internet, then reload the page."]];
+        onDataLoaded();
+    });
     $.get("data/projects.json", function(data, status) {
         if(status == "success") {
             projects = data;
@@ -14,7 +19,8 @@ window.onload = function() {
             });
         }
     });
-};
+}
+window.onload = loadData;
 
 
 function onDataLoaded() {
@@ -61,6 +67,10 @@ function addCards() {
             document.getElementsByTagName("main")[0].innerHTML += `<div class=\"card\"><p>${item[1]}</p><\/div>`;
         } else if(item[0] == "t") {
             document.getElementsByTagName("main")[0].innerHTML += `<div class=\"card title\"><p>${item[1]}</p><\/div>`;
+        } else if(item[0] == "n") { // note
+            document.getElementsByTagName("main")[0].innerHTML += `<div class=\"card can-be-closed\"><span class='close' onclick='this.parentElement.classList.toggle(\"closed\");'>×</span><p><em>${item[1]}</em></p><\/div>`;
+        } else if(item[0] == "s") { // snippet
+            document.getElementsByTagName("main")[0].innerHTML += `<div class=\"card\"><pre><code class="language-${item[1]}" data-lang="${item[1]}" data-title="${item[2]}">${item[3].replace(new RegExp("&", "g"), "&amp;").replace(new RegExp("<", "g"), "&lt;")}</code></p><\/div>`;
         }
     }
 }

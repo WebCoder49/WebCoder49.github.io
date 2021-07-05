@@ -1,0 +1,209 @@
+/* PrismJS 1.24.1
+https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+java+json+json5+markup-templating+php+python+ruby */
+/**
+ * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
+ * Based on https://github.com/chriskempson/tomorrow-theme
+ * @author Rose Pritchard
+ */
+/* Partially modified by WebCoder49 (see parts commented 'edited') */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #ccc;
+	background: none;
+	/* font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; */
+	font-family: "Source Code Pro", monospace; /* edited */
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+
+	position: relative; /* edited */
+	top: 0;
+	left: 0;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	padding-top: 2em; /* edited */
+	margin: .5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #2d2d2d;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #999;
+}
+
+.token.punctuation {
+	color: #ccc;
+}
+
+.token.tag,
+.token.attr-name,
+.token.namespace,
+.token.deleted {
+	/* color: #e2777a; */
+	/* edited */
+	color: #e2777a;
+	background: linear-gradient(135deg, #e95e63, #e48689);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.token.function-name {
+	color: #6196cc;
+}
+
+.token.boolean,
+.token.number,
+.token.function {
+	/* color: #f08d49; */
+	/* edited */
+	color: #f08d49;
+	background: linear-gradient(135deg, #eb640a, #faa46b);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.token.property,
+.token.class-name,
+.token.constant,
+.token.symbol {
+	/* color: #f8c555; */
+	/* edited */
+	color: #f8c555;
+	background: linear-gradient(135deg, #f5b937, #f5c96b);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.token.selector,
+.token.important,
+.token.atrule,
+.token.keyword,
+.token.builtin {
+	/* color: #cc99cd; */
+	/* edited */
+	color: #cc99cd;
+	background: linear-gradient(135deg, #d872da, #cc99cd);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.token.string,
+.token.char,
+.token.attr-value,
+.token.regex,
+.token.variable {
+	/* color: #7ec699; */
+	/* edited */
+	color: #7ec699;
+	background: linear-gradient(135deg, #4bd881, #8acaa3);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.token.operator,
+.token.entity,
+.token.url {
+	color: #67cdcc;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+
+.token.inserted {
+	color: green;
+}
+
+/* edited */
+pre[class*="language-"]:before {
+	content: attr(data-title);
+	font-family: "Recursive", monospace;
+	position: absolute;
+	top: 0.25em;
+	font-size: 1em;
+	left: 0.5em;
+	max-width: calc(100% - 5em);
+	color: white;
+	background: linear-gradient(135deg, #e69093, #96bbe0);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	text-decoration: underline;
+	text-wrap: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+pre[class*="language-"]:after {
+	content: attr(data-lang);
+	font-variant: small-caps;
+	position: absolute;
+	top: 0.25em;
+	font-size: 1em;
+	right: 0.5em;
+	color: white;
+	background: linear-gradient(135deg, #cccccc, white);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+pre[class*="language-"]::-webkit-scrollbar-track {
+	background: transparent;
+	background: linear-gradient(180deg, transparent, #67cdcc44);
+}
+pre[class*="language-"]::-webkit-scrollbar-thumb {
+	background: #ededed;
+	background: linear-gradient(135deg, #ffffff, #888888);
+}
