@@ -1,7 +1,7 @@
 {
   "vector-prime": {
     "title": "Vector: Prime",
-    "description": "A group of friends and I created this game <b>in a single week</b> for Brackeys Game Jam 2021.2. What do you think of it?",
+    "description": "A group of friends and I created this game in a single week for Brackeys Game Jam 2021.2. What do you think of it?",
     "image": "https://img.itch.zone/aW1nLzY4NTAxMjUuZ2lm/315x250%23c/SmSYCL.gif",
     "body": "<p><em><b>You are living. Living a normal, boring 9-5 life. Surviving. Until a mystical Artificial Intelligence abducts you claiming that your world is fake, and merely a program that is about to be destroyed by the very race who made it, the 'Ascended'. Run and jump your way through multiple procedurally-generated DOS attacks on your worlds' weakest structural points, to save everything and everyone you know and love...</b></em></p><p style='text-align: center'><iframe src='https://itch.io/embed/1176517' height='167' width='552' frameborder='0'><a href='https://datman101.itch.io/vector-prime'>Play Vector: Prime by Datman101</a></iframe><br/><a href='https://itch.io/jam/brackeys-6/rate/1176517'>⭐ Rate this for Brackey's Game Jam 2021.2</a></p><p>A group of friends and I created this game in a single week for Brackeys Game Jam 2021.2. <b>Please <a href='https://itch.io/jam/brackeys-6/rate/1176517'>rate it here</a></b> on itch.io if you can and comment to tell us what you like about it!</p>",
     "authors": "A group of my friends (including @Datman101 on itch.io) and me",
@@ -9,7 +9,9 @@
     "categories": [
       "Videogames",
       "Free",
-      "Game Jam"
+      "Game Jam",
+      "Unreal Engine",
+      "UE4"
     ],
     "link": "https://itch.io/jam/brackeys-6/rate/1176517",
     "logo": "itchio"
