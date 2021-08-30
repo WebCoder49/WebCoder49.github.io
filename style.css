@@ -265,10 +265,18 @@ div.ribbon {
     left: 5%;
     height: 90%;
     width: 90%;
-    background-color: var(--bg-1);
-    box-shadow: 5px 5px var(--shadow-1);
+    --custom-bg: var(--bg-1);
+    --custom-bg-2: var(--bg-2);
+    --custom-shadow: var(--shadow-1);
+    --custom-fg: var(--fg-1);
+    --custom-fg-3: var(--fg-3);
+    --custom-emphasis-1: var(--emphasis-1);
+    --custom-emphasis-2: var(--emphasis-2);
+    --custom-emphasis-3: var(--emphasis-3);
+    background-color: var(--custom-bg);
+    box-shadow: 5px 5px var(--custom-shadow);
     z-index: 2;
-    color: var(--fg-1);
+    color: var(--custom-fg);
 }
 #modal h1 {
     height: 36px;
@@ -281,12 +289,12 @@ div.ribbon {
     text-overflow: ellipsis;
     white-space: nowrap;
     float: left;
-    border-bottom: 1px solid var(--fg-1);
+    border-bottom: 1px solid var(--custom-fg);
     font-family: var(--title-font);
 }
 #modal .close {
     text-decoration: none;
-    color: var(--fg-1);
+    color: var(--custom-fg);
     width: 27px;
     height: 27px;
     border-radius: 50%;
@@ -298,15 +306,15 @@ div.ribbon {
     cursor: pointer;
 }
 #modal .close:hover {
-    border: 1px solid var(--fg-1);
-    background-color: var(--fg-1);
-    color: var(--bg-1);
+    border: 1px solid var(--custom-fg);
+    background-color: var(--custom-fg);
+    color: var(--custom-bg);
 }
 #modal .contents {
     width: 100%;
     margin: 0;
     padding: 0;
-    border-top: 1px solid var(--fg-1);
+    border-top: 1px solid var(--custom-fg);
     height: calc(100% - 42px);
     overflow: auto;
 }
@@ -314,7 +322,7 @@ div.ribbon {
     width: 53%;
     margin: 0;
     padding: 2%;
-    border-right: 1px solid var(--fg-1);
+    border-right: 1px solid var(--custom-fg);
     float: left;
     text-align: left;
 }
@@ -330,7 +338,7 @@ div.ribbon {
         width: 96%;
         margin: 0;
         padding: 2%;
-        border-bottom: 1px solid var(--fg-1);
+        border-bottom: 1px solid var(--custom-fg);
         border-right: 0;
         float: left;
         text-align: left;
@@ -353,14 +361,14 @@ div.ribbon {
     pointer-events: all;
 }
 #modal button {
-    background-color: var(--bg-2);
-    border: 1px solid var(--fg-3);
-    color: var(--fg-1);
+    background-color: var(--custom-bg-2);
+    border: 1px solid var(--custom-fg-3);
+    color: var(--custom-fg);
     padding: 0.5em;
 }
 #modal button:hover {
-    background-color: var(--emphasis-2);
-    border: 1px solid var(--emphasis-3);
+    background-color: var(--custom-emphasis-2);
+    border: 1px solid var(--custom-emphasis-3);
     color: var(--fg-2);
 }
 .icon {

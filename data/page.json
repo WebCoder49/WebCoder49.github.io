@@ -1,7 +1,16 @@
 [
 	[
+		"t",
+		"<b>🚀 Latest Projects</b>"
+	],
+	[
+		"p",
+		"vector-prime"
+	],
+	[
 		"s",
-		"Python", "A small snippet of Python",
+		"Python",
+		"A small snippet of Python",
 		"# You can load a JSON file as a dictionary\nimport json\nprojects = json.load(open('data.json'))"
 	],
 	[
