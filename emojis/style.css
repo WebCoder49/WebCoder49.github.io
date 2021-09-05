@@ -1,0 +1,22 @@
+body {
+    background-color: black;
+    overflow: hidden;
+}
+.emoji {
+    position: fixed;
+    transition: all 0.1s;
+}
+#message {
+    position: fixed;
+    top: 50vh;
+    left: 50vw;
+    z-index: 1;
+    color: white;
+    background-color: #00000088;
+    transform: translate(-50%, -50%);
+    padding: 4vw;
+    border-radius: 50%;
+    font-size: 4vw;
+    text-align: center;
+    font-family: "Klee One"
+}

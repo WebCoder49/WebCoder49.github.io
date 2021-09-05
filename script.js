@@ -1,11 +1,27 @@
 var projects = {};
-var cards = [["n", "<em>The projects or page structure could not be loaded using AJAX. It might work if you reload the page.</em>"]];
+var cards = [["n", "<em>The projects or page structure could not be loaded using AJAX. It might work if you reload the page.</em>"], ["random-s"], ["t", "Thanks to the following assets and open-source software that helped immensely when creating this web-app.<br/>Icons made by <a href=\"https://www.flaticon.com/authors/freepik\" title=\"Freepik\">Freepik</a> from <a href=\"https://www.flaticon.com/\" title=\"Flaticon\">www.flaticon.com</a>, and <span class=\"handwriting\">fonts by <a href=\"https://fonts.google.com\">Google Fonts</a></span>, as well as syntax highlighting by <a href=\"https://prismjs.com\">Prism.js</a>.<br/>Hosted on <a href=\"pages.github.com\">GitHub Pages</a>. <img class=\"icon\" src=\"images/icons/github.png\"/><br/><br/>This page uses <a href=\"https://jquery.com/\">jQuery</a> to load projects using AJAX."]];
+
+const emojis = "👨‍💻,👩‍💻,🎮,💻,🚀,🐛,⚡,💡,🚀,💻,💧,🐱,⭐,🌟,✨,🐧,☕,🌈".split(",");
+const random_snippets = [
+{
+    lang: "Python",
+    body: "# You can load a JSON file as a dictionary\nimport json\nprojects = json.load(open('data.json'))"
+},
+{
+    lang: "Python",
+    body: "# The built-in Python eval and exec functions can be used to interpret custom expressions and source code from strings.\n# Use them creatively, but wisely\nresult = eval(\"2 + 2\") # returns 4\nexec(custom_code) # runs source code stored in custom_code variable"
+},
+];
 
 /* Load data through AJAX */
 function loadData() {
+
+    // Easter Eggs
+    addEmojis(document.querySelector("#gradient-text"));
+    
     $(document).ajaxError(function(exc) {
         projects = {};
-        cards = [["n", "The projects or page structure could not be loaded. Try checking you are connected to the internet, then reload the page."]];
+        cards = [["n", "The projects or page structure could not be loaded. Try checking you are connected to the internet, then reload the page."], ["random-s"], ["t", "Thanks to the following assets and open-source software that helped immensely when creating this web-app.<br/>Icons made by <a href=\"https://www.flaticon.com/authors/freepik\" title=\"Freepik\">Freepik</a> from <a href=\"https://www.flaticon.com/\" title=\"Flaticon\">www.flaticon.com</a>, and <span class=\"handwriting\">fonts by <a href=\"https://fonts.google.com\">Google Fonts</a></span>, as well as syntax highlighting by <a href=\"https://prismjs.com\">Prism.js</a>.<br/>Hosted on <a href=\"pages.github.com\">GitHub Pages</a>. <img class=\"icon\" src=\"images/icons/github.png\"/><br/><br/>This page uses <a href=\"https://jquery.com/\">jQuery</a> to load projects using AJAX."]];
         onDataLoaded();
     });
     $.get("data/projects.json", function(data, status) {
@@ -22,6 +38,10 @@ function loadData() {
 }
 window.onload = loadData;
 
+function addEmojis(element) {
+    element.setAttribute("data-emoji-before", emojis[Math.floor(Math.random() * emojis.length)]); // emoji-before
+    element.setAttribute("data-emoji-after", emojis[Math.floor(Math.random() * emojis.length)]); // emoji-before
+}
 
 function onDataLoaded() {
     if(location.hash != "" && location.hash != "#" && location.hash != undefined && location.hash != null) {
@@ -71,6 +91,9 @@ function addCards() {
             document.getElementsByTagName("main")[0].innerHTML += `<div class=\"card can-be-closed\"><span class='close' onclick='this.parentElement.classList.toggle(\"closed\");'>×</span><p><em>${item[1]}</em></p><\/div>`;
         } else if(item[0] == "s") { // snippet
             document.getElementsByTagName("main")[0].innerHTML += `<div class=\"card snippet\"><pre class="language-${item[1]}" data-lang="${item[1]}" data-title="${item[2]}"><code>${item[3].replace(new RegExp("&", "g"), "&amp;").replace(new RegExp("<", "g"), "&lt;")}</code></p><\/div>`;
+        } else if(item[0] == "random-s") { // Random Snippet
+            let snippet = random_snippets[Math.floor(Math.random() * random_snippets.length)]
+            document.getElementsByTagName("main")[0].innerHTML += `<div class=\"card snippet\"><pre class="language-${snippet.lang}" data-lang="${snippet.lang}" data-title="A random snippet of ${snippet.lang} ${emojis[Math.floor(Math.random() * emojis.length)]}"><code>${snippet.body.replace(new RegExp("&", "g"), "&amp;").replace(new RegExp("<", "g"), "&lt;")}</code></p><\/div>`;
         }
     }
 

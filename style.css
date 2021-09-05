@@ -1,6 +1,7 @@
 :root {
     --title-font: 'Recursive';
     --main-font: 'Source Code Pro';
+    --cursive-font: 'Klee One';
     /* Colour Theme */
     --bg-1: lightblue;
     --bg-2: beige;
@@ -39,14 +40,55 @@
     font-family: var(--main-font), monospace;
     transition: all 0.5s;
 }
-.gradient-text {
+#gradient-text {
+    cursor: help; /* ? */
+    appearance: none;
+    text-decoration: none;
+    font-weight: bold;
+    text-shadow: none;
+    --emoji-before: attr(data-emoji-before);
+    --emoji-after: attr(data-emoji-after);
     color: var(--emphasis-1);
 	background: linear-gradient(135deg, var(--emphasis-1), 70%, var(--emphasis-2));
 	background-clip: text;
 	-webkit-background-clip: text;
 	-moz-background-clip: text;
 	-webkit-text-fill-color: transparent;
+    padding: 2px;
+    padding-left: 15px;
+    padding-right: 15px;
+    transition: all 0.5s;
 }
+
+#gradient-text:before {
+    content: var(--emoji-before, "👨‍💻");
+    padding-right: 10px;
+}
+#gradient-text:after {
+    content: var(--emoji-after, "👩‍💻");
+    padding-left: 10px;
+}
+#gradient-text:after, #gradient-text:before {
+    opacity: 0;
+    font-size: 1px;
+    transition: all 1s;
+    font-family: "Segoe UI Emoji";
+}
+#gradient-text:hover {
+    -webkit-text-fill-color: var(--ribbon-bg);
+    border-radius: 2px;
+    background-clip: border-box;
+    -webkit-background-clip: border-box;
+	-moz-background-clip: border-box;
+    transition: all 0.5s;
+
+}
+#gradient-text:hover:after, #gradient-text:hover:before {
+    opacity: 1;
+    font-size: 0.8em;
+    transition: all 0.5s;
+}
+
 body {
     text-align: center;
     margin: 0;
@@ -190,6 +232,11 @@ main {
     border-bottom: 2px solid var(--ribbon-fg);
     color: var(--ribbon-fg);
     text-shadow: none;
+}
+
+.handwriting {
+    font-family: var(--cursive-font, cursive);
+    font-weight: bold;
 }
 
 div.ribbon {

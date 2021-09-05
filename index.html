@@ -6,7 +6,7 @@
         </title>
         <!--External code; load before-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <link href="https://fonts.googleapis.com/css2?family=Recursive&family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Recursive&family=Source+Code+Pro&family=Klee+One&display=swap" rel="stylesheet">
         <!--Prism.js-->
         <script src="third-party/prism.js"></script>
         <link rel="stylesheet" href="third-party/prism.css">
@@ -16,7 +16,7 @@
         <script src="script.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="utf-8">
-        <meta name="description" content="I'm a keen programmer, and I enjoy coding videogames, websites, maths-based projects and anything else that includes problem solving!">
+        <meta name="description" content="I'm a keen programmer, and I enjoy coding videogames, web-apps, maths-based projects and anything else that includes problem solving!">
         <meta name="keywords" content="Portfolio,Game Development,Python,JavaScript,CSS,HTML,GitHub Pages">
         <meta name="author" content="WebCoder49">
 
@@ -29,7 +29,7 @@
                 <h1 id="project-title">Not A Project</h1><span class="close" onclick="closeModal(document.querySelector('#modal-overlay'));">&times;</span>
                 <div class="contents">
                     <div class="column-l">
-                        <h2 id="project-description"><span contenteditable>Well, you can type here as I do not know what to put in the description of a project that <b>does not exist</b>. Go on, try it!</span></h2>
+                        <h2 id="project-description"><span contenteditable>Type the description yourself!</span></h2>
                         <img id="project-image" src="images/screenshot.png"/>
                         <div id="project-contents">
                         <p>Oops. This project may have been renamed or deleted. Please see all my projects <a href="./">here</a>.</p>
@@ -51,9 +51,9 @@
         </div>
         <main>
             <div class="card title">
-                <p class="ribbon"><b class="gradient-text">WebCoder49</b><br>
+                <p class="ribbon"><a href="emojis" id="gradient-text" data-emoji-before="👨‍💻" data-emoji-after="👩‍💻" onmouseover='addEmojis(document.querySelector("#gradient-text"));'>WebCoder49</a><br>
                     <img src="images/logo.png" class="icon"/><img src="images/icons/coding.png" class="icon"/></p>
-                <p>I'm a keen <b>programmer</b>, and I enjoy coding <b>videogames, websites, maths-based projects</b> and anything else that includes problem solving! <br>
+                <p class="handwriting">I'm a keen <b>programmer</b>, and I enjoy coding <b>videogames, web-apps, maths-based projects</b> and anything else that includes problem solving! <br>
                     <img src="images/icons/website.png" class="icon">
                 </p>
                 <p>
