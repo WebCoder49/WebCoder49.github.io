@@ -422,8 +422,12 @@ div.ribbon {
     height: 2em;
     margin: 0.5em;
 }
-p:hover a.social img {
+p:hover .social img {
     filter: saturate(0.0);
+    opacity: 0.5;
+}
+p:hover .badge img {
+    filter: saturate(0.5);
     opacity: 0.5;
 }
 a.social img {
@@ -431,6 +435,19 @@ a.social img {
     filter: saturate(1.0);
     transition: filter 0.5, transform 1.0;
     border: 2px solid transparent;
+}
+a.badge img {
+    border-radius: 10px;
+    border: 2px solid #aaa;
+    border-bottom: 2px solid #444;
+    border-right: 2px solid #777;
+    border-left: 2px solid #999;
+    border-top: 2px solid #aaa;
+}
+a.badge:hover img {
+    box-shadow: 0 0 15px #444;
+    filter: none!important;
+    opacity: 1!important;
 }
 a.social:hover img {
     filter: none!important;

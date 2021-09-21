@@ -7,7 +7,7 @@ window.setInterval(function() {
         if(y_percent >= 120) {
             document.body.removeChild(emoji);
         } else {
-            emoji.style.top = (y_percent + 1) + "%"; // Remove, increment, then add % again
+            emoji.style.top = (y_percent + 2) + "%"; // Remove, increment, then add % again
         }
     }
 
