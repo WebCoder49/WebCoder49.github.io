@@ -1,5 +1,5 @@
 var projects = {};
-var cards = [["n", "<em>The projects or page structure could not be loaded using AJAX. It might work if you reload the page.</em>"], ["random-s"], ["t", "Thanks to the following assets and open-source software that helped immensely when creating this web-app.<br/>Icons made by <a href=\"https://www.flaticon.com/authors/freepik\" title=\"Freepik\">Freepik</a> from <a href=\"https://www.flaticon.com/\" title=\"Flaticon\">www.flaticon.com</a>, and <span class=\"handwriting\">fonts by <a href=\"https://fonts.google.com\">Google Fonts</a></span>, as well as syntax highlighting by <a href=\"https://prismjs.com\">Prism.js</a>.<br/>Hosted on <a href=\"pages.github.com\">GitHub Pages</a>. <img class=\"icon\" src=\"images/icons/github.png\"/><br/><br/>This page uses <a href=\"https://jquery.com/\">jQuery</a> to load projects using AJAX."]];
+var cards = [["n", "<em>The projects or page structure could not be loaded using AJAX. It might work if you reload the page.</em>"]];
 
 const emojis = "👨‍💻,👩‍💻,🎮,💻,🚀,🐛,⚡,💡,🚀,💻,💧,🐱,⭐,🌟,✨,🐧,☕,🌈".split(",");
 const random_snippets = [
@@ -21,7 +21,6 @@ function loadData() {
     
     $(document).ajaxError(function(exc) {
         projects = {};
-        cards = [["n", "The projects or page structure could not be loaded. Try checking you are connected to the internet, then reload the page."], ["random-s"], ["t", "Thanks to the following assets and open-source software that helped immensely when creating this web-app.<br/>Icons made by <a href=\"https://www.flaticon.com/authors/freepik\" title=\"Freepik\">Freepik</a> from <a href=\"https://www.flaticon.com/\" title=\"Flaticon\">www.flaticon.com</a>, and <span class=\"handwriting\">fonts by <a href=\"https://fonts.google.com\">Google Fonts</a></span>, as well as syntax highlighting by <a href=\"https://prismjs.com\">Prism.js</a>.<br/>Hosted on <a href=\"pages.github.com\">GitHub Pages</a>. <img class=\"icon\" src=\"images/icons/github.png\"/><br/><br/>This page uses <a href=\"https://jquery.com/\">jQuery</a> to load projects using AJAX."]];
         onDataLoaded();
     });
     $.get("data/projects.json", function(data, status) {
@@ -45,8 +44,8 @@ function addEmojis(element) {
 
 function onDataLoaded() {
     if(location.hash != "" && location.hash != "#" && location.hash != undefined && location.hash != null) {
-        if(location.hash.substr(1) in projects) {
-            loadProject(location.hash.substr(1));
+        if(location.hash.substring(1) in projects) {
+            loadProject(location.hash.substring(1));
         } else {
             document.querySelector("main").innerHTML += "<div class='card can-be-closed'><span class='close' onclick='this.parentElement.classList.toggle(\"closed\");'>×</span><p><em>The project in the link could not be found. It may have been renamed or deleted.</em></p>";
         }
@@ -83,6 +82,13 @@ function addCards() {
         if(item[0] == "p") {
             project = projects[item[1]];
             document.getElementsByTagName("main")[0].innerHTML += `<a href="#${item[1]}" onclick="loadProject(\'${item[1]}\');"><div class=\"project card\" title="View Details and Open ${project.title}" style=\"background-image: url(\' ${project.image} \');\">\r\n<div class=\"title\">${project.title}<\/div>\r\n<div class=\"description\">\r\n<p>${project.description}<\/p>\r\n<img src="${logos[project.logo]}" title="Made and Hosted on ${logoNames[project.logo]}" class="logo"/><\/div>\r\n<\/div></a>`;
+        } else if(item[0] == "category") {
+            for(project in projects) {
+                // Add project
+                if(item[1] == "*" || project.categories.includes(item[1])) {
+                    html += `<a href="#${item[1]}" onclick="loadProject(\'${item[1]}\');"><div class=\"project card\" title="View Details and Open ${project.title}" style=\"background-image: url(\' ${project.image} \');\">\r\n<div class=\"title\">${project.title}<\/div>\r\n<div class=\"description\">\r\n<p>${project.description}<\/p>\r\n<img src="${logos[project.logo]}" title="Made and Hosted on ${logoNames[project.logo]}" class="logo"/><\/div>\r\n<\/div></a>`;
+                }
+            }
         } else if(item[0] == "c") {
             document.getElementsByTagName("main")[0].innerHTML += `<div class=\"card\"><p>${item[1]}</p><\/div>`;
         } else if(item[0] == "t") {
@@ -195,16 +201,16 @@ function search(query, output) {
         let projects_by_relevance = {};
         for(project in projects) {
             projects_by_relevance[project] = 0;
-        }
 
-        if(projects[project].title.toUpperCase().includes(query)) {
-            projects_by_relevance[project] += 50; // 50 for exact title match
-        }
-        if(projects[project].description.toUpperCase().includes(query)) {
-            projects_by_relevance[project] += 10; // 10 for exact description match
-        }
-        if(projects[project].body.toUpperCase().includes(query)) {
-            projects_by_relevance[project] += 5; // 5 for exact body match
+            if(projects[project].title.toUpperCase().includes(query)) {
+                projects_by_relevance[project] += 50; // 50 for exact title match
+            }
+            if(projects[project].description.toUpperCase().includes(query)) {
+                projects_by_relevance[project] += 10; // 10 for exact description match
+            }
+            if(projects[project].body.toUpperCase().includes(query)) {
+                projects_by_relevance[project] += 5; // 5 for exact body match
+            }
         }
 
         for(let i = 0; i < words.length; i++) {
