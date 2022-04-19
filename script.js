@@ -83,13 +83,14 @@ function addCards() {
             project = projects[item[1]];
             document.getElementsByTagName("main")[0].innerHTML += `<a href="#${item[1]}" onclick="loadProject(\'${item[1]}\');"><div class=\"project card\" title="View Details and Open ${project.title}" style=\"background-image: url(\' ${project.image} \');\">\r\n<div class=\"title\">${project.title}<\/div>\r\n<div class=\"description\">\r\n<p>${project.description}<\/p>\r\n<img src="${logos[project.logo]}" title="Made and Hosted on ${logoNames[project.logo]}" class="logo"/><\/div>\r\n<\/div></a>`;
         } else if(item[0] == "category") {
-            html = ""
+            let html = "";
             for(project in projects) {
                 // Add project
                 if(item[1] == "*" || project.categories.includes(item[1])) {
                     html += `<a href="#${item[1]}" onclick="loadProject(\'${item[1]}\');"><div class=\"project card\" title="View Details and Open ${project.title}" style=\"background-image: url(\' ${project.image} \');\">\r\n<div class=\"title\">${project.title}<\/div>\r\n<div class=\"description\">\r\n<p>${project.description}<\/p>\r\n<img src="${logos[project.logo]}" title="Made and Hosted on ${logoNames[project.logo]}" class="logo"/><\/div>\r\n<\/div></a>`;
                 }
             }
+            console.log("Category: " + html);
             document.getElementsByTagName("main")[0].innerHTML += html;
         } else if(item[0] == "c") {
             document.getElementsByTagName("main")[0].innerHTML += `<div class=\"card\"><p>${item[1]}</p><\/div>`;
