@@ -84,10 +84,11 @@ function addCards() {
             document.getElementsByTagName("main")[0].innerHTML += `<a href="#${item[1]}" onclick="loadProject(\'${item[1]}\');"><div class=\"project card\" title="View Details and Open ${project.title}" style=\"background-image: url(\' ${project.image} \');\">\r\n<div class=\"title\">${project.title}<\/div>\r\n<div class=\"description\">\r\n<p>${project.description}<\/p>\r\n<img src="${logos[project.logo]}" title="Made and Hosted on ${logoNames[project.logo]}" class="logo"/><\/div>\r\n<\/div></a>`;
         } else if(item[0] == "category") {
             let html = "";
-            for(project in projects) {
+            for(name in projects) {
+                project = projects[name];
                 // Add project
                 if(item[1] == "*" || project.categories.includes(item[1])) {
-                    html += `<a href="#${item[1]}" onclick="loadProject(\'${item[1]}\');"><div class=\"project card\" title="View Details and Open ${project.title}" style=\"background-image: url(\' ${project.image} \');\">\r\n<div class=\"title\">${project.title}<\/div>\r\n<div class=\"description\">\r\n<p>${project.description}<\/p>\r\n<img src="${logos[project.logo]}" title="Made and Hosted on ${logoNames[project.logo]}" class="logo"/><\/div>\r\n<\/div></a>`;
+                    html += `<a href="#${name}" onclick="loadProject(\'${name}\');"><div class=\"project card\" title="View Details and Open ${project.title}" style=\"background-image: url(\' ${project.image} \');\">\r\n<div class=\"title\">${project.title}<\/div>\r\n<div class=\"description\">\r\n<p>${project.description}<\/p>\r\n<img src="${logos[project.logo]}" title="Made and Hosted on ${logoNames[project.logo]}" class="logo"/><\/div>\r\n<\/div></a>`;
                 }
             }
             console.log("Category: " + html);
