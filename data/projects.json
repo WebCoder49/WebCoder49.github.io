@@ -1,19 +1,20 @@
 {
-  "code-input": {
-    "title": "code-input",
-    "description": "An HTML component for fully customisable, editable syntax-highlighted textareas.",
-    "image": "https://user-images.githubusercontent.com/69071853/133924472-05edde5c-23e7-4350-a41b-5a74d2dc1a9a.gif",
-    "body": "<p><code>code-input</code> lets you turn any ordinary JavaScript syntax-highlighting theme and program into customisable syntax-highlighted textareas using an HTML custom element. It uses vanilla CSS to superimpose a textarea on a <code>pre code</code> block, then handles indentations, scrolling and fixes any resulting bugs with JavaScript. <a href='https://github.com/WebCoder49/code-input'>View it on GitHub</a></p><iframe height='300' style='width: 100%;' scrolling='no' title='Custom Element for editable, syntax-highlighted code using z-indexes' src='https://codepen.io/WebCoder49/embed/jOypJOx?default-tab=html%2Cresult' frameborder='no' loading='lazy' allowtransparency='true' allowfullscreen='true'><p><a href='https://codepen.io/WebCoder49/pen/jOypJOx'>Demo</a></p></iframe>",
-    "authors": "WebCoder49 (with suggestions from others)",
-    "date": "19 Sep 2021",
+  "dolphinsofthedeep": {
+    "title": "Dolphins of the Deep",
+    "description": "<b>Befriend and ride</b> a variety of <b>dolphin species</b> in Minecraft, gaining gifts to level up! <b>Fundraising for WDC.</b>",
+    "image": "https://raw.githubusercontent.com/WebCoder49/dolphinsofthedeep/main/src/main/resources/assets/dolphinsofthedeep/large_icon.png",
+    "body": "<p><a href='https://www.minecraft.net/en-us/store/minecraft-java-bedrock-edition-pc'>Minecraft: Java Edition 1.19</a> / <a href='https://files.minecraftforge.net/net/minecraftforge/forge/index_1.19.html'>Minecraft Forge 1.19 - 41.1.0</a> / <a href='https://fabricmc.net/use/installer/'>Fabric Loader 0.14.6</a> / <a href='https://www.curseforge.com/minecraft/mc-mods/fabric-api/files/3936024'>Fabric API 0.57.0+1.19</a></p><h4 id='features'>Features</h4><ul><li>Meet 3 naturally-spawning species of dolphin: Common Dolphin, Bottlenose &amp; Pink River Dolphin</li><li>Befriend dolphins by giving them fish, and then ride them with a saddle, crafting and equipping armour.</li><li>Receive gifts and a custom material, delphinium, to give you a marine theme!</li></ul><h4 id='fundraising'>Fundraising</h4><p>If you <strong>enjoy this free mod</strong>, please show your support by giving a <strong>voluntary donation</strong> to the <a href='https://justgiving.com/dolphinsofthedeep'>Whale and Dolphin Conservation charity on this JustGiving page</a>:</p><p><a href='https://justgiving.com/dolphinsofthedeep'>justgiving.com/dolphinsofthedeep</a></p><ul><li>The effects of <strong>accidental capture in nets</strong> have already taken their toll on New Zealand&#39;s <a href='https://www.iucnredlist.org/species/4162/44199757'>Endangered Hector&#39;s</a> and <a href='https://www.iucnredlist.org/species/39427/44200192'>Critically Endangered Maui&#39;s</a> Dolphins, and <a href='https://www.iucnredlist.org/species/134817215/195828797#threats'>this trend will spread</a> if we don&#39;t act soon.</li><li><a href='https://uk.whales.org/our-4-goals/'><strong>Over 1,500 whales</strong> and similar numbers of dolphins</a> are victims of <strong>purposeful hunting</strong>.</li><li><a href='https://uk.whales.org/our-4-goals/'><strong>Over 3,600</strong></a> whales and dolphins are still held in captivity.</li></ul><p>Through <strong>raising awareness</strong>, taking <strong>political action</strong> and <strong>providing alternatives</strong>, WDC aims to take action to prevent all these factors putting cetaceans in danger. To learn more about the actions WDC is taking, <strong><a href='https://uk.whales.org/our-4-goals/'>please see their website</a></strong>.</p><h4 id='credits'>Credits</h4><blockquote><p> Thank you to MG, AG and CG for helping with playtesting, graphics, and ideas!</p></blockquote><a href='https://www.curseforge.com/minecraft/mc-mods/dolphinsofthedeep'><strong>Download the mod</strong></a>",
+    "authors": "WebCoder49, MG, CG, and AG",
+    "date": "30 Aug 2022",
     "categories": [
-      "JavaScript",
-      "Open-Source",
+      "Java",
+      "Minecraft",
       "Featured"
     ],
-    "link": "https://github.com/WebCoder49/code-input",
-    "logo": "github"
+    "link": "https://www.curseforge.com/minecraft/mc-mods/dolphinsofthedeep",
+    "logo": "web"
   },
+
   "youareacat": {
     "title": "You Are A Cat! Game",
     "description": "In this videogame, you are a cat exploring a <b>world</b> of pixels!",
