@@ -15,6 +15,36 @@
     "logo": "web"
   },
 
+  "code-input": {
+    "title": "Code-Input",
+    "description": "Fully <b>customisable, editable, syntax-highlighted</b> textareas.",
+    "image": "https://user-images.githubusercontent.com/69071853/133924472-05edde5c-23e7-4350-a41b-5a74d2dc1a9a.gif",
+    "body": "<h2><a href='https://github.com/WebCoder49/code-input/'>View on GitHub.</a></h2> <p><iframe height='300' style='width: 100%;' scrolling='no' title='Custom Element for editable, syntax-highlighted code using z-indexes' src='https://codepen.io/WebCoder49/embed/jOypJOx?default-tab=result' frameborder='no' loading='lazy' allowtransparency='true' allowfullscreen='true'>  See the Pen <a href='https://codepen.io/WebCoder49/pen/jOypJOx'>  Custom Element for editable, syntax-highlighted code using z-indexes</a> by WebCoder49 (<a href='https://codepen.io/WebCoder49'>@WebCoder49</a>)  on <a href='https://codepen.io'>CodePen</a>.</iframe></p>",
+    "authors": "WebCoder49 and Open-Source Contributors",
+    "date": "15 Jul 2022",
+    "categories": [
+      "JavaScript",
+      "Open-Source",
+      "Featured"
+    ],
+    "link": "https://github.com/WebCoder49/code-input/",
+    "logo": "github"
+  },
+
+  "consolecheckers": {
+    "title": "Console Checkers",
+    "description": "Play <b>checkers</b> right in the <b>Python console</b>!",
+    "image": "images/console-checkers.png",
+    "body": "<h2>An experiment powered by Python 2D arrays and ANSI color escapes.</h2> <iframe frameborder='0' width='100%' height='500px' src='https://replit.com/@OG49/Console-Checkers?embed=true'></iframe>",
+    "authors": "WebCoder49, 10kmathur, 10JYap, BradyMiu",
+    "date": "2 Dec 2021",
+    "categories": [
+      "Python"
+    ],
+    "link": "https://replit.com/@OG49/Console-Checkers",
+    "logo": "replit"
+  },
+
   "youareacat": {
     "title": "You Are A Cat! Game",
     "description": "In this videogame, you are a cat exploring a <b>world</b> of pixels!",
@@ -29,6 +59,7 @@
     "link": "https://webcoder49.itch.io/youareacat-game",
     "logo": "itchio"
   },
+
   "turingtape": {
     "title": "TuringTape",
     "description": "A <b>Turing Machine</b> simulation...",
