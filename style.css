@@ -1,5 +1,5 @@
 :root {
-    --title-font: 'Recursive';
+    --title-font: 'Gruppo';
     --main-font: 'Source Code Pro';
     --cursive-font: 'Klee One';
     /* Colour Theme */
@@ -47,6 +47,9 @@
     appearance: none;
     text-decoration: none;
     font-weight: bold;
+    font-family: var(--title-font);
+    font-size: 250%;
+
     text-shadow: none;
     --emoji-before: attr(data-emoji-before);
     --emoji-after: attr(data-emoji-after);
@@ -98,7 +101,8 @@ body {
     overflow-x: hidden;
 
     background-color: var(--bg-1);
-    background: repeating-linear-gradient(10deg, var(--bg-3) 0vh, var(--bg-3) 50vh, var(--bg-1) 50vh, var(--bg-1) 200vh);
+    background: linear-gradient(170deg, transparent 0, transparent 20vh, var(--ribbon-bg) 20vh, var(--ribbon-bg) 70vh, transparent 70vh),
+                repeating-linear-gradient(10deg, var(--bg-3) 0vh, var(--bg-3) 50vh, var(--bg-1) 50vh, var(--bg-1) 200vh);
 }
 main, footer {
     display: inline-block;
@@ -123,6 +127,13 @@ main, footer {
     }
     .card:not(:is(.title, .snippet)) {
         min-height: 59vw!important;
+    }
+
+    #modal {
+        top: 0%!important;
+        left: 0%!important;
+        width: 100%!important;
+        height: 100%!important;
     }
 }
 @media (min-width: 540px) {
