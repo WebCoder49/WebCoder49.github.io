@@ -209,6 +209,11 @@ function search(query, output) {
             if(projects[project].title.toUpperCase().includes(query)) {
                 projects_by_relevance[project] += 50; // 50 for exact title match
             }
+            for(let i = 0; i < projects[project].categories.length; i++) {
+                if(projects[project].categories[i].toUpperCase() == query) {
+                    projects_by_relevance[project] += 50; // 50 for exact c match
+                }
+            }
             if(projects[project].description.toUpperCase().includes(query)) {
                 projects_by_relevance[project] += 10; // 10 for exact description match
             }
@@ -224,6 +229,11 @@ function search(query, output) {
                 for(project in projects_by_relevance) {
                     if(projects[project].title.toUpperCase().includes(word)) {
                         projects_by_relevance[project] += 25; // 25 for title match
+                    }
+                    for(let i = 0; i < projects[project].categories.length; i++) {
+                        if(projects[project].categories[i].toUpperCase() == query) {
+                            projects_by_relevance[project] += 25; // 25 for exact c match
+                        }
                     }
                     if(projects[project].description.toUpperCase().includes(word)) {
                         projects_by_relevance[project] += 4; // 4 for description match

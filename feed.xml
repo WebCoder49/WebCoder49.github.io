@@ -28,6 +28,18 @@
 <pubDate>2 Dec 2021</pubDate>
 </item>
 <item>
+    <title>A* Pathfinder</title>
+    <link>https://webcoder49.github.io/#astar</link>
+    <description>A visual JS implementation of the A* Algorithm</description>
+<pubDate>26 Oct 2021</pubDate>
+</item>
+<item>
+    <title>Guess the HEX Colour</title>
+    <link>https://webcoder49.github.io/#colours</link>
+    <description>A fun Python game, all in the console</description>
+<pubDate>5 Jul 2021</pubDate>
+</item>
+<item>
     <title>You Are A Cat! Game</title>
     <link>https://webcoder49.github.io/#youareacat</link>
     <description>In this videogame, you are a cat exploring a <b>world</b> of pixels!</description>
