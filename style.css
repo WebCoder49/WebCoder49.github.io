@@ -3,20 +3,21 @@
     --main-font: 'Source Code Pro';
     --cursive-font: 'Klee One';
     /* Colour Theme */
-    --bg-1: lightblue;
-    --bg-2: beige;
-    --bg-3: #ffff88;
-    --fg-1: navy;
-    --fg-2: blue;
-    --fg-3: #808000;
-    --emphasis-1: white;
-    --emphasis-2: yellow;
-    --emphasis-3: gold;
+    --bg-1: #112;
+    --bg-2: #223;
+    --bg-3: #334;
+    --fg-1: #eef;
+    --fg-2: #ddf;
+    --fg-3: #ccf;
+    --fg-link: #88f;
+    --emphasis-1: #cca4;
+    --emphasis-2: #dda4;
+    --emphasis-3: #eea4;
     --shadow-1: #00008088;
     --shadow-2: #ffff0088;
-    --ribbon-bg: navy;
-    --ribbon-bg-transparent: #1f1f2c88;
-    --ribbon-fg: white;
+    --ribbon-bg: #331;
+    --ribbon-bg-transparent: #11113388;
+    --ribbon-fg: #223;
 }
 
 ::-webkit-scrollbar {
@@ -49,7 +50,7 @@
     --emoji-before: attr(data-emoji-before);
     --emoji-after: attr(data-emoji-after);
     color: var(--emphasis-1);
-	background: linear-gradient(135deg, var(--emphasis-1), 70%, var(--emphasis-2));
+	background: linear-gradient(135deg, var(--fg-3), 70%, var(--fg-link));
 	background-clip: text;
 	-webkit-background-clip: text;
 	-moz-background-clip: text;
@@ -291,6 +292,10 @@ div.ribbon {
     box-shadow: 5px 5px var(--shadow-2);
     cursor: pointer;
 }
+
+.card:hover {
+    box-shadow: 0 0 25px var(--shadow-1);
+}
 /*Modal*/
 #modal-overlay, #modal {
     pointer-events: none;
@@ -477,7 +482,7 @@ a.social:active img {
     width: 30px;
 }
 a {
-    color: blue;
+    color: var(--fg-link);
     text-shadow: 1px 2px var(--emphasis-1);
 }
 
