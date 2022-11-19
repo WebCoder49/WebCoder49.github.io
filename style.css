@@ -17,7 +17,8 @@
     --shadow-2: #ffff0088;
     --ribbon-bg: #331;
     --ribbon-bg-transparent: #11113388;
-    --ribbon-fg: #223;
+    --ribbon-fg: #bbd;
+    --description-fg: #112;
 }
 
 ::-webkit-scrollbar {
@@ -94,38 +95,47 @@ body {
     text-align: center;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+
     background-color: var(--bg-1);
+    background: repeating-linear-gradient(10deg, var(--bg-3) 0vh, var(--bg-3) 50vh, var(--bg-1) 50vh, var(--bg-1) 200vh);
 }
 main, footer {
     display: inline-block;
     
-    width: 100%;
+    width: calc(100% - 100px);
+    margin: 50px;
     background-color: var(--bg-2);
     margin-bottom: 20px;
+    box-shadow: 0 0 10px var(--bg-1);
+
+    border-radius: 10px;
 }
-@media (max-width: 440px) {
-    main {
-        width: 100vw!important;
+@media (max-width: 540px) {
+    main, footer {
+        width: 100%!important;
+        margin: 0!important;
+        border-radius: 0!important;
     }
     .card {
-        width: 96vw!important;
-        margin: 2vw!important;
+        width: 96%!important;
+        margin: 2%!important;
     }
     .card:not(:is(.title, .snippet)) {
         min-height: 59vw!important;
     }
 }
-@media (min-width: 440px) {
+@media (min-width: 540px) {
     main {
         width: 440px;
     }
 }
-@media (min-width: 880px) {
+@media (min-width: 980px) {
     main {
         width: 880px;
     }
 }
-@media (min-width: 1320px) {
+@media (min-width: 1420px) {
     main {
         width: 1320px;
     }
@@ -202,7 +212,7 @@ main, footer {
     width: 50%;
     height: unset;
     transform: translate(0, -50%);
-    color: var(--fg-1);
+    color: var(--description-fg);
     font-size: 20px;
     text-shadow: 1px 1px var(--emphasis-1);
     text-overflow: ellipsis;
