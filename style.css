@@ -461,15 +461,16 @@ a.social img {
     transition: filter 0.5, transform 1.0;
     border: 2px solid transparent;
 }
-a.badge img {
+.badge img {
     border-radius: 10px;
     border: 2px solid #aaa;
     border-bottom: 2px solid #444;
     border-right: 2px solid #777;
     border-left: 2px solid #999;
     border-top: 2px solid #aaa;
+    max-width: 100%;
 }
-a.badge:hover img {
+.badge:hover img {
     box-shadow: 0 0 15px #444;
     filter: none!important;
     opacity: 1!important;
