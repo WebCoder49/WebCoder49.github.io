@@ -1,4 +1,20 @@
 {
+  "archipelago": {
+    "title": "Archipelago",
+    "description": "Play against friends online and 4 levels of <b>AI</b> in this <b>puzzle game</b>, in your browser or installed offline!",
+    "image": "https://storage.googleapis.com/replit/images/1677917968497_cce4291d73fff30535cf6552acd0704d.png",
+    "body": "<p>Please <a href='https://replit.com/@OG49/Archipelago?v=1'>Like this Repl on Replit</a> if you enjoy playing it, and let me know of any suggestions or improvements you can think of!</p><p><iframe frameborder='0' width='100%' height='500px' src='https://replit.com/@OG49/Archipelago?embed=true'></iframe></p><p>To install the offline version, please <a href='https://archipelago.og49.repl.co/' target='_blank'>open the game in a new tab</a>, wait for the notice to appear, then click 'Install'.</p>",
+    "authors": "WebCoder49",
+    "date": "05 Mar 2023",
+    "categories": [
+      "JavaScript",
+      "Multiplayer",
+      "Featured"
+    ],
+    "link": "https://archipelago.og49.repl.co/",
+    "logo": "replit"
+  },
+
   "dolphinsofthedeep": {
     "title": "Dolphins of the Deep",
     "description": "<b>Befriend and ride</b> a variety of <b>dolphin species</b> in Minecraft, gaining gifts to level up! <b>Fundraising for WDC.</b>",
