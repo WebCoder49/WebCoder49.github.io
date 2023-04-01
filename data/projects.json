@@ -1,4 +1,18 @@
 {
+  "tree-of-life": {
+    "title": "Tree of Life",
+    "description": "Learn about the rich array of life on Earth, search and save your <b>favourite species</b>, and generate <b>visual taxonomy trees</b>!",
+    "image": "https://user-images.githubusercontent.com/69071853/229288330-cf3c6250-8617-4e9c-8ef4-6421a75a2826.png",
+    "body": "",
+    "authors": "WebCoder49",
+    "date": "01 Apr 2023",
+    "categories": [
+      "JavaScript",
+      "Featured"
+    ],
+    "link": "https://webcoder49.github.io/tree-of-life/",
+    "logo": "github"
+  },
   "archipelago": {
     "title": "Archipelago",
     "description": "Play against friends online and 4 levels of <b>AI</b> in this <b>puzzle game</b>, in your browser or installed offline!",
