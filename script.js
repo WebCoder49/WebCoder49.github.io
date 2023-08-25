@@ -1,3 +1,9 @@
+// Load email addresses
+document.querySelectorAll(".email").forEach(function(elem) {
+    elem.innerHTML += "@webcoder49.dev";
+    elem.href = "mailto:" + elem.innerHTML;
+});
+
 var projects = {};
 var cards = [["n", "<em>The projects or page structure could not be loaded using AJAX. It might work if you reload the page.</em>"]];
 
