@@ -1,7 +1,9 @@
 // Load email addresses
-document.querySelectorAll(".email").forEach(function(elem) {
-    elem.innerHTML += "@webcoder49.dev";
-    elem.href = "mailto:" + elem.innerHTML;
+window.addEventListener("load", function() {
+    document.querySelectorAll(".email").forEach(function(elem) {
+        elem.innerHTML += "@webcoder49.dev";
+        elem.href = "mailto:" + elem.innerHTML;
+    });
 });
 
 var projects = {};
