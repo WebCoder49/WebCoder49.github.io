@@ -27,21 +27,23 @@ function loadData() {
     // Easter Eggs
     addEmojis(document.querySelector("#gradient-text"));
     
-    $(document).ajaxError(function(exc) {
+    const projectsReq = new XMLHttpRequest();
+    projectsReq.open("GET", "data/projects.json");
+    projectsReq.addEventListener("error", (evt) => {
         projects = {};
         onDataLoaded();
     });
-    $.get("data/projects.json", function(data, status) {
-        if(status == "success") {
-            projects = data;
-            $.get("data/page.json", function(data, status) {
-                if(status == "success") {
-                    cards = data;
-                    onDataLoaded();
-                }
-            });
-        }
+    projectsReq.addEventListener("load", (evt) => {
+        projects = JSON.parse(projectsReq.responseText);
+        const pageReq = new XMLHttpRequest();
+        pageReq.open("GET", "data/page.json");
+        pageReq.addEventListener("load", (evt) => {
+            cards = JSON.parse(pageReq.responseText);
+            onDataLoaded();
+        });
+        pageReq.send();
     });
+    projectsReq.send();
 }
 window.onload = loadData;
 
@@ -68,7 +70,7 @@ const logos = {
     web: "images/icons/website.png",
     rss: "images/icons/rss.svg",
     codepen: "images/icons/codepen.png",
-    replit: "images/icons/coding.png",
+    replit: "images/icons/disabled.svg",
     itchio: "images/icons/joystick.png",
     wordpress: "images/icons/wordpress.png",
     youtube: "images/icons/youtube.svg"
@@ -78,7 +80,7 @@ const logoNames = {
     web: "the WorldWide Web",
     rss: "an RSS feed",
     codepen: "CodePen",
-    replit: "Replit",
+    replit: "(Obsolete) Replit",
     itchio: "itch.io",
     wordpress: "WordPress",
     youtube: "YouTube"
@@ -123,9 +125,11 @@ function addCards() {
 }
 
 let currentProject = "";
+let scroll_pos = 0;
 function loadProject(projectID) {
+    scroll_pos = document.documentElement.scrollTop;
     currentProject = projectID;
-    document.getElementById("modal-overlay").classList.add("modal-open");
+    document.getElementById("modal").showModal();
     project = projects[projectID];
     document.getElementById("project-title").innerHTML = project.title;
     document.getElementById("project-description").innerHTML = project.description;
@@ -145,16 +149,10 @@ function loadProject(projectID) {
     document.getElementById("project-logo-name").innerHTML = logoNames[project.logo];
     document.getElementById("project-logo").src = logos[project.logo];
 }
-function closeModal(modal) {
-    let scroll_pos = document.documentElement.scrollTop;
-    console.log(scroll_pos);
-
-    modal.classList.remove('modal-open');
+function closeModalEffects() {
     document.location.hash = '#';
-
     document.documentElement.scrollTop = scroll_pos;
 }
-
 function share(button) {
     if (navigator.share) {
         let project = projects[currentProject];

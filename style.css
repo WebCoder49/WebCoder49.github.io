@@ -1,6 +1,17 @@
+@font-face {
+    font-family: "Gruppo";
+    font-weight: normal;
+    src: url(third-party/Gruppo/Gruppo-Regular.ttf);
+}
+@font-face {
+    font-family: "Klee One";
+    font-weight: normal;
+    src: url(third-party/Klee_One/KleeOne-Regular.ttf);
+}
+
 :root {
     --title-font: 'Gruppo';
-    --main-font: 'Source Code Pro';
+    --main-font: monospace;
     --cursive-font: 'Klee One';
     /* Colour Theme */
     --bg-1: #112;
@@ -9,14 +20,14 @@
     --fg-1: #eef;
     --fg-2: #ddf;
     --fg-3: #ccf;
-    --fg-link: #88f;
+    --fg-link: #aaf;
     --emphasis-1: #cca4;
     --emphasis-2: #dda4;
     --emphasis-3: #eea4;
     --shadow-1: #00008088;
     --shadow-2: #ffff0088;
     --ribbon-bg: #331;
-    --ribbon-bg-transparent: #11113388;
+    --ribbon-bg-transparent: #111133ee;
     --ribbon-fg: #bbd;
     --description-fg: #112;
 }
@@ -184,10 +195,13 @@ main, footer {
     padding: 0.25em;
     padding-bottom: 0.5em;
     padding-left: 0.5em;
+    border: 0;
+    margin: 0;
     font-size: 1.5em;
     text-align: center;
     border-radius: 0;
     border-bottom-left-radius: 1em;
+    color: var(--fg-1);
     background-color: var(--bg-1);
     cursor: pointer;
 }
@@ -282,10 +296,10 @@ div.ribbon {
     box-shadow: inset 5px 5px var(--shadow-2);
 }
 
-:is(.title, .snippet) {
+.title, .snippet {
     min-height: unset!important;
 }
-.project :is(.title, .snippet) {
+.project .title, .project .snippet {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -294,6 +308,7 @@ div.ribbon {
     background-color: var(--ribbon-bg-transparent);
     font-family: var(--title-font);
     font-size: 20px;
+    font-weight: bold;
     color: var(--ribbon-fg);
     text-align: center;
     text-overflow: ellipsis;
@@ -318,19 +333,6 @@ div.ribbon {
     box-shadow: 0 0 25px var(--shadow-1);
 }
 /*Modal*/
-#modal-overlay, #modal {
-    pointer-events: none;
-    opacity: 0;
-}
-#modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: #00000088;
-    z-index: 1;
-}
 #modal {
     position: fixed;
     top: 5%;
@@ -349,6 +351,13 @@ div.ribbon {
     box-shadow: 5px 5px var(--custom-shadow);
     z-index: 2;
     color: var(--custom-fg);
+
+    margin: 0;
+    border: 0;
+    padding: 0;
+    overflow: hidden;
+
+    outline: max(5vh, 5vw) solid #00000088;
 }
 #modal h1 {
     height: 36px;
@@ -356,7 +365,7 @@ div.ribbon {
     padding: 2px;
     margin: 0;
     text-align: center;
-    width: calc(100% - 40px);
+    width: calc(100% - 50px);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -366,13 +375,16 @@ div.ribbon {
 }
 #modal .close {
     text-decoration: none;
+    background-color: var(--custom-bg);
     color: var(--custom-fg);
-    width: 27px;
-    height: 27px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     border: 1px solid transparent;
     padding: 2px;
-    margin: 1px;
+    margin: 3px;
+    text-align: center;
+    vertical-align: middle;
     font-size: 20px;
     float: right;
     cursor: pointer;
@@ -387,7 +399,7 @@ div.ribbon {
     margin: 0;
     padding: 0;
     border-top: 1px solid var(--custom-fg);
-    height: calc(100% - 42px);
+    height: 100%;
     overflow: auto;
 }
 #modal .column-l {
@@ -422,13 +434,8 @@ div.ribbon {
 #modal .column-l iframe {
     width: 100%!important;
 }
-.modal-open main {
-    filter: blur(3px);
-}
-.modal-open {
-    overflow: hidden;
-}
-.modal-open#modal-overlay, .modal-open #modal {
+#modal[open] {
+    display: block;
     opacity: 1;
     pointer-events: all;
 }
